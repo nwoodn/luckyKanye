@@ -1,0 +1,36 @@
+.navbar {
+    font-size: 120%;
+}
+
+.kanyeImg {
+    height: 80px;
+}
+
+#container {
+    text-align: left;
+    text-align: justify;
+}
+
+h1 {
+    font-family: 'Bungee', cursive;
+    display: inline;
+    vertical-align: middle;
+    font-size: 240%;
+}
+
+iframe {
+    border: none; 
+    overflow: hidden;
+}
+
+@media screen and (min-width:768px) {
+
+    .kanyeImg {
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 400%;
+    }
+
+}
