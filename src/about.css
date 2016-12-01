@@ -1,0 +1,80 @@
+#profPic {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+}
+#quote {
+    font-size: 12pt;
+    color: gray;
+}
+#show{
+    color: blue;
+}
+p {
+    margin:20px;
+}
+
+.albumImg {
+    height: 200px;
+    width: 200px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+ul {
+    max-width: 200px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    justify-content: center;
+}
+
+.card {
+    flex-grow: 1;
+    flex-basis: 25%;
+    padding: .5em;
+}
+
+@media screen and (min-width:768px){
+    #profPic{
+        height: 200px;
+        float:left;
+        margin-right: 50px;
+        margin-left: 50px;
+        display: block;
+    }
+    #quote {
+        float: right;
+        width: 300px;
+        margin-right: 50px;
+    }
+    #followButton{
+        float: right;
+    }
+    h1 {
+        float:left;
+    }
+     .card {
+        flex-basis: 25%;
+    }
+    .albumImg {
+        width: 250px;
+        height: 250px;
+    }
+    h4 {
+        font-size: 15pt;
+    }
+}
+
+@media screen and (min-width:992px) {
+
+} 
