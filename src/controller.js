@@ -30,6 +30,16 @@ var controller = {
                 var data = res.text();
                 return data;
             })
+    },
+
+    popular: function(artistId) {
+
+        var uri = spotifyBase + '/v1/artists/' + artistId + '/top-tracks?country=US';
+        return fetch(uri)
+            .then(function(res) {
+                var data = res.json();
+                return data;
+            })
     }
 }
 

@@ -6,6 +6,8 @@ import './about.css';
 
 //import Frame from 'react-frame-component';
 
+var SONG_STATUS = {playing:false, songPlaying:"", audio: new Audio()};
+
 
 class About extends Component {
 
@@ -13,7 +15,7 @@ class About extends Component {
         return(
             <div>
                 <Bio/>
-                <AlbumsArea/>
+                <Songs/>
             </div>
         );
     };
@@ -26,6 +28,7 @@ class Bio extends Component {
     super(props);
     this.fetchData = this.fetchData.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleQuote = this.handleQuote.bind(this);
     this.state = {
       showMore:false,
       bio:"Kanye Omari West was born in Atlanta, Georgia, on June 8, 1977. He left college to pursue a musical career, producing tracks for Jay-Z while polishing his demo. He released The College Dropout in 2004. It sold 2.6 million copies and won Best Rap Album. His follow-up releases have been",
@@ -64,7 +67,7 @@ class Bio extends Component {
   //gets new quote
   handleQuote(){
     this.fetchData();
-    console.log("done");
+    //console.log("done");
   }
 
     render(){
@@ -72,6 +75,7 @@ class Bio extends Component {
             <div>
                 <h1>Kanye Omari West</h1>
                 <p id="quote">"{this.state.quote}" --Kanye</p>
+                <button onClick={this.handleQuote}> New Quote </button>
               
                 <script type="text" src="https://yepi.io/quote.js"/> 
                 <div id="followButton">
@@ -86,191 +90,94 @@ class Bio extends Component {
     };
 }
 
- class AlbumsArea extends Component {
+class Songs extends Component {
 
-   // sets the data to fetch albums for kanye
   constructor(props){
     super(props);
     this.fetchData = this.fetchData.bind(this);
-    this.state = {albums:[]};
-    this.fetchData("5K4W6rqBFWDnAN6FQUkS6x");
-  }
+    this.state = {tracks:[]};
+    this.fetchData('5K4W6rqBFWDnAN6FQUkS6x');
+}
 
-  // gets the data on kanye and sets the state
   fetchData(artistId) {
-    var thisComponent = this; 
-    controller.albums(artistId)
-      .then(function(data) {
-        thisComponent.setState({albums:data.items})
+    //console.log("fetching");
+    var thisComponent = this;
+    controller.popular(artistId)
+      .then(function(data){
+        //console.log(data);
+        thisComponent.setState({tracks:data.tracks})
       })
-      .catch( (err) => this.setState({albums:[]}));
+      .catch( (err) => this.setState({tracks:['err']}));
   }
 
   render() {
-    return (
-      <div>
-        <Albums albums={this.state.albums}/>
-      </div>
+    return(
+    <Song tracks={this.state.tracks}/> 
     );
   }
 }
 
-//creates an album class
-class Albums extends Component {
+class Song extends Component {
 
   render() {
-    var albumCardArray=this.props.albums.map(function(albumObj){
-      return <AlbumCard album={albumObj} albumId={albumObj.id} key={albumObj.id}/>
+    //console.log(this.props);
+    
+    var songArray = this.props.tracks.map(function(trackObj){
+      //console.log(trackObj);
+      return <SongItem track={trackObj} key={trackObj.name}/>
     });
 
     return (
-      <div>
-          <div className="card-container">
-            {albumCardArray}
-          </div>
-      </div>
+      <ul>
+        {songArray}
+      </ul>
     );
   }
 }
 
-//creates an album card
-class AlbumCard extends Component {
+class SongItem extends Component {
 
-   constructor(props){
+  constructor(props){
     super(props);
-    this.state = {
-      showComponent:false,
-      numClicks:0
-    };
     this.handleClick = this.handleClick.bind(this);
   }
 
-//shows componet on odd number of clicks
-  handleClick() { 
-    if(this.state.numClicks % 2 === 0) {
-      this.setState({
-        showComponent:true,
-        numClicks: this.state.numClicks + 1
-      });
-    } else {
-      this.setState({
-        showComponent:false,
-        numClicks: this.state.numClicks + 1
-      });
+  handleClick() {
+    // console.log(this.state);
+     var audio = new Audio();
+    //console.log(this.state);
+    if(!SONG_STATUS.playing) { // song is not playing
+      console.log("1");
+      audio = new Audio(this.props.track.preview_url);      
+      audio.play();
+      SONG_STATUS = {playing:true, songPlaying:this.props.track.name,audio:audio};
+    } else { // a song is playing
+      if( this.props.track.name === SONG_STATUS.songPlaying){ //song clicked is song playing
+        console.log("2");
+        SONG_STATUS.audio.pause();
+        //console.log("pause");
+        SONG_STATUS = {playing:false, songPlaying:"", audio:new Audio()};
+      } else { // song clicked isnt song playing
+        console.log('3');
+        SONG_STATUS.audio.pause();
+        audio = new Audio(this.props.track.preview_url);
+        audio.play();
+        SONG_STATUS = {playing:true, songPlaying:this.props.track.name,audio:audio};
+      }
     }
   }
 
-  render() {
-    var albumImgUrl=this.props.album.images[0].url;
-    var albumImg={
-      backgroundImage: 'url(' + albumImgUrl + ')'
-    }
+  render(){
+    //console.log(this.props);
 
-    return (
-      <div>
-        <div className="card">
-            <button type="button" className="albumImg" style={albumImg} onClick={this.handleClick}/>
-              {this.state.showComponent ?
-                <SongList albumId={this.props.albumId}/> :
-                  null
-              }
-        </div>
-      </div>
-
-    );
-  }
-}
-
-// creates a SongList
- class SongList extends Component{
-
-    constructor(props){
-    super(props);
-    this.fetchData = this.fetchData.bind(this);
-    this.state = {album:[]};
-    this.fetchData(this.props.albumId);
-  }
-
-  fetchData(albumId) {
-    var thisComponent = this; 
-    controller.album(albumId)
-      .then(function(data) {
-        thisComponent.setState({album:data.items})
-      })
-      .catch( (err) => this.setState({album:[]}));
-  }
-
-   render() {
-
-     var songItemArray = this.state.album.map(function(songObj) {
-       return <SongItem songName={songObj.name} preview={songObj.preview_url} key={songObj.id}/>
-     });
-
-     //console.log(songItemArray);
-
-     return(
-       <div>
-        <h6> Click to Play! </h6>
-          <ul> 
-            {songItemArray}
-          </ul>
-       </div>
-     );
-   }
- }
-
-// creates a song Item
- class SongItem extends Component {
-
-   constructor(props){
-    super(props);
-    this.state = {
-      songPlaying: null,
-      isPlaying:false,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-
-     handleClick(){
-        var audio = new Audio();
-        console.log(this.state.songPlaying);
-        //console.log(this.props.preview);
-        if(this.state.songPlaying === this.props.preview){ //playing this track
-            //console.log('here');
-            if(this.state.isPlaying){ //check state
-                audio.pause();
-                this.state.isPlaying = false;
-            } else {
-                audio.play();
-                this.state.isPlaying = true;
-                this.state.songPlaying = this.props.preview;
-            }
-            }
-            else { //different track
-               // console.log('here');
-            audio.pause(); //pause current
-            audio = new Audio(this.props.preview); //create new audio
-            audio.play(); //play new
-            this.state.songPlaying = this.props.preview;
-            console.log(this.state.songPlaying);
-            this.state.isPlaying = true;
-        }
-        //  if (this.state.songPlaying === null) { // song isnt playing
-        //     var audio = new Audio(this.props.preview);
-        //     audio.play();
-        //     this.state.songPlaying = this.props.preview;
-        //  } else if(this.props.preview === this.state.songPlaying) { // song is playing and you click on it
-
-        //  }
-     }
-
-   render() {
-     return (
-      <li target="_blank" onClick={this.handleClick}>
-          {this.props.songName}
+    return(
+      <li onClick={this.handleClick}>
+      {this.props.track.name}
       </li>
-     )
-   } }
+    );
+  }
+}
+
+
 
 export default About; //make this class available to other files (e.g., index.js)
