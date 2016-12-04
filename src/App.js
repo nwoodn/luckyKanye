@@ -13,13 +13,9 @@ class App extends Component {
       <div className="App">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
         <Navigation />
-        <Quiz />
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>#Kanye2020</h2>
-        </div>
-        <About/>
-        <Events/>
+        <main role="main">
+          {this.props.children}
+        </main>
       </div>
     );
   }

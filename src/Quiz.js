@@ -16,7 +16,7 @@ class Quiz extends React.Component {
         this.setAnswer = this.setAnswer.bind(this);
         this.computePercent = this.computePercent.bind(this);
         this.renderResult = this.renderResult.bind(this);
-        this.handleClick = this.handleClick.bind(this); 
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -52,7 +52,12 @@ class Quiz extends React.Component {
                 score = score + 1;
             }
         });
-        return "You agree with " + (score / total * 100)+ "% of Kanye's opinions";
+        var finalPercent = (score / total * 100);
+        if (finalPercent >= 60) {
+            return <div className="score">You agree with {finalPercent}% of Kanye's opinions<br />You would enjoy having Kanye as President!</div>;
+        } else {
+            return <div className="score">You agree with {finalPercent}% of Kanye's opinions</div>;
+        }
     }
 
     renderResult() {
@@ -60,7 +65,7 @@ class Quiz extends React.Component {
     }
 
     handleClick() {
-        this.setState({step:0})
+        this.setState({ step: 0 })
     }
 
     render() {
@@ -79,7 +84,7 @@ class Quiz extends React.Component {
                             <div>{this.renderResult()}</div>
                             <button type="button" onClick={this.handleClick}>Start Over</button>
                         </div>
-                      )
+                    )
                 )}
             </div>
         )

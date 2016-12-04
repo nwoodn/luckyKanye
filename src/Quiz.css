@@ -11,3 +11,9 @@ form {
     margin: auto;
     width: 50%;
 }
+
+.score {
+    margin: 30px;
+    font-weight: 100;
+    font-size: 200%;
+}

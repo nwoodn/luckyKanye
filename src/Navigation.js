@@ -23,9 +23,8 @@ class Navigation extends React.Component {
 					</Navbar.Header>
 					<Navbar.Collapse>
 						<Nav>
-							<NavItem eventKey={1} href="#">About</NavItem>
-							<NavItem eventKey={2} href="#">Positions</NavItem>
-							<NavItem eventKey={2} href="#">Events</NavItem>
+							<LinkContainer to="/about"><NavItem>About</NavItem></LinkContainer>
+							<LinkContainer to="/events"><NavItem>Events</NavItem></LinkContainer>
 							<LinkContainer to="/quiz"><NavItem>Political Stances</NavItem></LinkContainer>
 						</Nav>
 					</Navbar.Collapse>
