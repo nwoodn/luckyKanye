@@ -23,10 +23,8 @@ class Navigation extends React.Component {
 					</Navbar.Header>
 					<Navbar.Collapse>
 						<Nav>
-							{/*<LinkContainer to="/about">About</LinkContainer>
-							<LinkContainer to="/events">Events</LinkContainer>*/}
-							<NavItem>About</NavItem>
-							<NavItem>Events</NavItem>
+							<LinkContainer to="/about"><NavItem>About</NavItem></LinkContainer>
+							<LinkContainer to="/events"><NavItem>Events</NavItem></LinkContainer>
 							<LinkContainer to="/quiz"><NavItem>Political Stances</NavItem></LinkContainer>
 						</Nav>
 					</Navbar.Collapse>
