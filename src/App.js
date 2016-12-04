@@ -20,6 +20,10 @@ class App extends Component {
         </div>
         <About/>
         <Events/>
+
+        <main>
+          {this.props.children}
+        </main>
       </div>
     );
   }
