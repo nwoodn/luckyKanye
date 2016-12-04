@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import eventsJson from './events.json';
 // api key = Pd4kqfGVGCbGnj2f
-
 // Jam Base api key = t5wx9dw3ce7vbsyyjz7qqhrx
 
 
@@ -13,7 +13,7 @@ class Events extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { events: SAMPLE_EVENTS };
+    this.state = { events: eventsJson['concerts'] };
     //this.fetchData = this.fetchData.bind(this);
   }
 
@@ -46,8 +46,6 @@ class EventTable extends React.Component {
         <thead>
           <tr>
             <th className="col-xs-1">City</th>
-            <th className="col-xs-4">State</th>
-            <th className="col-xs-4">Country</th>
             <th className="col-xs-4">Venue</th>
             <th className="col-xs-4">Date</th>
           </tr>
@@ -76,8 +74,6 @@ class EventRow extends React.Component {
     return (
       <tr onClick={this.handleClick}>
         <td>{event.city}</td>
-        <td>{event.state}</td>
-        <td>{event.country}</td>
         <td>{event.venue}</td>
         <td>{event.date}</td>
       </tr>
