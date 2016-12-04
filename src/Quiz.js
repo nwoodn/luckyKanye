@@ -95,7 +95,7 @@ class Question extends React.Component {
                     <br />
                     <button type="button" onClick={this.props.validateAnswers}>
                         Validate answer
-        </button>
+                    </button>
                 </form>
             </div>
         );

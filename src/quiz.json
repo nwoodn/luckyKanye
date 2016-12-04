@@ -2,132 +2,147 @@
     "title": "How Do Your Stances Align With Kanye's?",
     "questions": [
         {
-            "question": "What is the first question?",
+            "question": "Who did you or would you have voted for in the 2016 Presidential Election?",
             "answers": [
                 {
-                    "is_right": true,
-                    "value": "This one"
+                    "is_right": false,
+                    "value": "Hillary Clinton"
                 },
+
                 {
                     "is_right": false,
-                    "value": "The next one"
+                    "value": "Gary Johnson"
+                },
+
+                {
+                    "is_right": true,
+                    "value": "Donald Trump"
+                },
+
+                {
+                    "is_right": false, 
+                    "value": "Jill Stein"
                 }
             ]
         },
         {
-            "question": "What is the second question?",
+            "question": "Black Lives Matter?",
             "answers": [
                 {
                     "is_right": true,
-                    "value": "This one"
+                    "value": "Yes"
                 },
                 {
                     "is_right": false,
-                    "value": "The next one"
+                    "value": "No"
                 }
             ]
         },
         {
-            "question": "What is the third question?",
+            "question": "I support LGBTQ rights",
             "answers": [
                 {
                     "is_right": true,
-                    "value": "This one"
+                    "value": "True"
                 },
                 {
                     "is_right": false,
-                    "value": "The next one"
+                    "value": "False"
                 }
             ]
         },
         {
-            "question": "What is the fourth question?",
+            "question": "Do you believe that people in Hip-Hop discriminate against gay people?",
             "answers": [
                 {
                     "is_right": true,
-                    "value": "This one"
+                    "value": "Yes"
                 },
                 {
                     "is_right": false,
-                    "value": "The next one"
+                    "value": "No"
                 }
             ]
         },
         {
-            "question": "What is the fifth question?",
+            "question": "Who would you fill your cabinet with?",
             "answers": [
                 {
-                    "is_right": true,
-                    "value": "This one"
+                    "is_right": false,
+                    "value": "Mostly Democrats"
                 },
                 {
                     "is_right": false,
-                    "value": "The next one"
+                    "value": "Mostly Republicans"
+                }, 
+                {
+                    "is_right": true,
+                    "value": "Bipartisan Individuals"
                 }
             ]
         },
         {
-            "question": "What is the sixth question?",
+            "question": "Do you believe that institutional racism exists in the private prison system?",
             "answers": [
                 {
                     "is_right": true,
-                    "value": "This one"
+                    "value": "Yes, the prison system disproportionately jails young men of color"
                 },
                 {
                     "is_right": false,
-                    "value": "The next one"
+                    "value": "No, the system is fair and just"
                 }
             ]
         },
         {
-            "question": "What is the seventh question?",
+            "question": "Donda's House, Inc. is a foundation that provides access to premium arts instruction to youth. Do you believe that an education in music and the arts is an important part of youth development?",
             "answers": [
                 {
                     "is_right": true,
-                    "value": "This one"
+                    "value": "Yes, art and music programs are a vital part of a child's education"
                 },
                 {
                     "is_right": false,
-                    "value": "The next one"
+                    "value": "No, art and music programs should be the first ones cut in low-budget situations"
                 }
             ]
         },
         {
-            "question": "What is the eighth question?",
+            "question": "Would Kim Kardashian make a good First Lady?",
             "answers": [
                 {
                     "is_right": true,
-                    "value": "This one"
+                    "value": "Yes"
                 },
                 {
                     "is_right": false,
-                    "value": "The next one"
+                    "value": "No, bring back Michelle Obama"
                 }
             ]
         },
         {
-            "question": "What is the ninth question?",
+            "question": "Who should have won the 2009 VMA award for Best Female Video?",
             "answers": [
                 {
-                    "is_right": true,
-                    "value": "This one"
+                    "is_right": false,
+                    "value": "Taylor Swift"
                 },
                 {
-                    "is_right": false,
-                    "value": "The next one"
+                    "is_right": true,
+                    "value": "Beyoncé"
                 }
             ]
         },
         {
-            "question": "What is the tenth question?",
+            "question": "Is Kanye a God?",
             "answers": [
                 {
                     "is_right": true,
-                    "value": "This one"
+                    "value": "Yes"
                 },
                 {
                     "is_right": false,
-                    "value": "The next one"
+                    "value": "False"
                 }
             ]
         }
