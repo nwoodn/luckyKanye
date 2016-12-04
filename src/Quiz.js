@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import quizJSON from './quiz.json';
+import './Quiz.css';
 
 class Quiz extends React.Component {
 
@@ -34,7 +35,7 @@ class Quiz extends React.Component {
         var result = true;
         Object.keys(this.state.quiz.questions[index].answers).map((value, answer_index) => {
             var answer = this.state.quiz.questions[index].answers[value]
-            if (!this.state.user_answers[index] || (answer.is_right != (this.state.user_answers[index][value] || false))) {
+            if (!this.state.user_answers[index] || (answer.is_right !== (this.state.user_answers[index][value] || false))) {
                 result = false;
             }
         });
@@ -50,7 +51,7 @@ class Quiz extends React.Component {
                 score = score + 1;
             }
         });
-        return score / total * 100 + "%";
+        return "You agree with " + (score / total * 100)+ "% of Kanye's opinions";
     }
 
     renderResult() {
@@ -60,8 +61,8 @@ class Quiz extends React.Component {
     render() {
         if (!this.state.quiz.questions && this.state.step === 0) { return <div></div> }
         return (
-            <div>
-                <h1>{this.state.quiz.title}</h1>
+            <div className="quiz">
+                <h2>{this.state.quiz.title}</h2>
                 {(this.state.step < (this.state.quiz.questions.length)
                     ? (<Question
                         id={this.state.step}
@@ -78,25 +79,27 @@ class Quiz extends React.Component {
 class Question extends React.Component {
 
     render() {
-        var answersNodes = Object.keys(this.props.data.answers).map(function (value, index) {
+        var answersNodes = Object.keys(this.props.data.answers).map((value, index) => {
             return (
-                <div>
+                <div className="radio">
                     <input
                         id={"answer-input-" + index}
-                        type="checkbox"
+                        type="radio"
                         value={value}
                         onChange={this.props.setAnswer}
-                        defaultChecked={false} />
+                        defaultChecked={false}
+                        name="answer"
+                        />
                     <label htmlFor={"answer-input-" + index}>
-                        {(parseInt(index) + 1) + ": " + this.props.data.answers[index].value}
+                        {this.props.data.answers[index].value}
                     </label>
                 </div>
             )
-        }.bind(this));
+        });
 
         return (
             <div>
-                <h4>{(parseInt(this.props.id) + 1) + ": " + this.props.data.question}</h4>
+                <h3>{(parseInt(this.props.id) + 1) + ": " + this.props.data.question}</h3>
                 <form>
                     {answersNodes}
                     <br />
