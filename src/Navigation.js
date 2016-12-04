@@ -25,6 +25,7 @@ class Navigation extends React.Component {
 							<NavItem eventKey={1} href="#">About</NavItem>
 							<NavItem eventKey={2} href="#">Positions</NavItem>
 							<NavItem eventKey={2} href="#">Events</NavItem>
+							<NavItem eventKey={2} href="#">Political Stances</NavItem>
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
