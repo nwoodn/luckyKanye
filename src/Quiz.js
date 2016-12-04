@@ -15,6 +15,7 @@ class Quiz extends React.Component {
         this.setAnswer = this.setAnswer.bind(this);
         this.computePercent = this.computePercent.bind(this);
         this.renderResult = this.renderResult.bind(this);
+        this.handleClick = this.handleClick.bind(this); 
     }
 
     componentDidMount() {
@@ -34,7 +35,7 @@ class Quiz extends React.Component {
         var result = true;
         Object.keys(this.state.quiz.questions[index].answers).map((value, answer_index) => {
             var answer = this.state.quiz.questions[index].answers[value]
-            if (!this.state.user_answers[index] || (answer.is_right != (this.state.user_answers[index][value] || false))) {
+            if (!this.state.user_answers[index] || (answer.is_right !== (this.state.user_answers[index][value] || false))) {
                 result = false;
             }
         });
@@ -57,6 +58,10 @@ class Quiz extends React.Component {
         return this.computePercent();
     }
 
+    handleClick() {
+        this.setState({step:0})
+    }
+
     render() {
         if (!this.state.quiz.questions && this.state.step === 0) { return <div></div> }
         return (
@@ -71,7 +76,7 @@ class Quiz extends React.Component {
                     : (
                         <div>
                             <div>{this.renderResult()}</div>
-                            <button type="button">Start Over</button>
+                            <button type="button" onClick={this.handleClick}>Start Over</button>
                         </div>
                       )
                 )}
