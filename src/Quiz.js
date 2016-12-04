@@ -61,14 +61,19 @@ class Quiz extends React.Component {
         if (!this.state.quiz.questions && this.state.step === 0) { return <div></div> }
         return (
             <div>
-                <h1>{this.state.quiz.title}</h1>
+                <h2>{this.state.quiz.title}</h2>
                 {(this.state.step < (this.state.quiz.questions.length)
                     ? (<Question
                         id={this.state.step}
                         data={this.state.quiz.questions[this.state.step]}
                         validateAnswers={this.nextStep}
                         setAnswer={this.setAnswer} />)
-                    : (<div>{this.renderResult()}</div>)
+                    : (
+                        <div>
+                            <div>{this.renderResult()}</div>
+                            <button type="button">Start Over</button>
+                        </div>
+                      )
                 )}
             </div>
         )
@@ -86,9 +91,11 @@ class Question extends React.Component {
                         type="checkbox"
                         value={value}
                         onChange={this.props.setAnswer}
-                        defaultChecked={false} />
+                        defaultChecked={false}
+                        name="answer" />
+                    {' '}
                     <label htmlFor={"answer-input-" + index}>
-                        {(parseInt(index) + 1) + ": " + this.props.data.answers[index].value}
+                        {this.props.data.answers[index].value}
                     </label>
                 </div>
             )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import {LinkContainer} from 'react-router-bootstrap';
 import './Navigation.css';
 
 class Navigation extends React.Component {
@@ -25,7 +26,7 @@ class Navigation extends React.Component {
 							<NavItem eventKey={1} href="#">About</NavItem>
 							<NavItem eventKey={2} href="#">Positions</NavItem>
 							<NavItem eventKey={2} href="#">Events</NavItem>
-							<NavItem eventKey={2} href="#">Political Stances</NavItem>
+							<LinkContainer to="/quiz"><NavItem>Political Stances</NavItem></LinkContainer>
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
