@@ -9,7 +9,7 @@ class Quiz extends React.Component {
         this.state = {
             quiz: {},
             user_answers: [],
-            step: 0
+            step: null
         }
         this.setState = this.setState.bind(this);
         this.nextStep = this.nextStep.bind(this);
@@ -17,6 +17,7 @@ class Quiz extends React.Component {
         this.computePercent = this.computePercent.bind(this);
         this.renderResult = this.renderResult.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleStart = this.handleStart.bind(this); 
     }
 
     componentDidMount() {
@@ -65,11 +66,21 @@ class Quiz extends React.Component {
     }
 
     handleClick() {
-        this.setState({ step: 0 })
+        this.setState({ step: 0 }); 
+    }
+
+    handleStart() {
+        this.setState({ step: 0 });
     }
 
     render() {
-        if (!this.state.quiz.questions && this.state.step === 0) { return <div></div> }
+        if (this.state.step === null) { 
+            return <div>
+                       <h2>{this.state.quiz.title}</h2>
+                       <h3>Take this quiz to find out!</h3>
+                       <button type="button" onClick={this.handleStart}>Start</button>
+                   </div>
+        }
         return (
             <div className="quiz">
                 <h2>{this.state.quiz.title}</h2>

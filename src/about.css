@@ -60,9 +60,6 @@ a {
     #followButton{
         float: right;
     }
-    h1 {
-        float:left;
-    }
      .card {
         flex-basis: 25%;
     }
