@@ -10,7 +10,11 @@ class Quiz extends React.Component {
             user_answers: [],
             step: 0
         }
-        this.setState = this.setState.bind(this)
+        this.setState = this.setState.bind(this);
+        this.nextStep = this.nextStep.bind(this);
+        this.setAnswer = this.setAnswer.bind(this);
+        this.computePercent = this.computePercent.bind(this);
+        this.renderResult = this.renderResult.bind(this);
     }
 
     componentDidMount() {
@@ -28,33 +32,37 @@ class Quiz extends React.Component {
 
     isAnswerRight(index) {
         var result = true;
-        Object.keys(this.state.quiz.questions[index].answers).map(function (value, answer_index) {
+        Object.keys(this.state.quiz.questions[index].answers).map((value, answer_index) => {
             var answer = this.state.quiz.questions[index].answers[value]
             if (!this.state.user_answers[index] || (answer.is_right != (this.state.user_answers[index][value] || false))) {
                 result = false;
             }
         });
-        this.isAnswerRight = this.isAnswerRight.bind(this);
         return result;
     }
 
-    computeScore() {
+    computePercent() {
         var score = 0
-        Object.keys(this.state.quiz.questions).map(function (value, index) {
+        var total = 0;
+        Object.keys(this.state.quiz.questions).map((value, index) => {
+            total++;
             if (this.isAnswerRight(index)) {
                 score = score + 1;
             }
         });
-        this.computeScore = this.computeScore.bind(this);
-        return score;
+        return score / total * 100 + "%";
+    }
+
+    renderResult() {
+        return this.computePercent();
     }
 
     render() {
-        if (!this.state.quiz.questions) { return <div></div> }
+        if (!this.state.quiz.questions && this.state.step === 0) { return <div></div> }
         return (
             <div>
                 <h1>{this.state.quiz.title}</h1>
-                {(this.state.step < this.state.quiz.questions.length
+                {(this.state.step < (this.state.quiz.questions.length)
                     ? (<Question
                         id={this.state.step}
                         data={this.state.quiz.questions[this.state.step]}
@@ -65,7 +73,6 @@ class Quiz extends React.Component {
             </div>
         )
     }
-
 }
 
 class Question extends React.Component {
@@ -94,7 +101,7 @@ class Question extends React.Component {
                     {answersNodes}
                     <br />
                     <button type="button" onClick={this.props.validateAnswers}>
-                        Validate answer
+                        Continue
                     </button>
                 </form>
             </div>
