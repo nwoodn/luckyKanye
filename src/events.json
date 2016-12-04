@@ -1,0 +1,104 @@
+{
+    "concerts": [
+        {
+            "date": "AUGUST 25",
+            "city": "INDIANAPOLIS",
+            "venue": "BANKERS LIFE FIELDHOUSE"
+        },
+        {
+            "date": "AUGUST 27",
+            "city": "BUFFALO",
+            "venue": "FIRST NIAGARA"
+        },
+        {
+            "date": "AUGUST 30",
+            "city": "TORONTO",
+            "venue": "AIR CANADA"
+        },
+        {
+            "date": "AUGUST 31",
+            "city": "TORONTO",
+            "venue": "AIR CANADA"
+        },
+        {
+            "date": "SEPTEMBER 2",
+            "city": "MONTREAL",
+            "venue": "BELL CENTRE"
+        },
+        {
+            "date": "SEPTEMBER 3",
+            "city": "BOSTON",
+            "venue": "TD GARDEN"
+        },
+        {
+            "date": "SEPTEMBER 5",
+            "city": "NEW YORK",
+            "venue": "MADISON SQUARE GARDEN"
+        },
+        {
+            "date": "SEPTEMBER 6",
+            "city": "NEW YORK",
+            "venue": "MADISON SQUARE GARDEN"
+        },
+        {
+            "date": "SEPTEMBER 8",
+            "city": "WASHINGTON",
+            "venue": "VERIZONCENTER"
+        },
+        {
+            "date": "SEPTEMBER 12",
+            "city": "ATLANTA",
+            "venue": "PHILIPS ARENA"
+        },
+        {
+            "date": "SEPTEMBER 14",
+            "city": "TAMPA",
+            "venue": "AMALIE ARENA"
+        },
+        {
+            "date": "SEPTEMBER 16",
+            "city": "MIAMI",
+            "venue": "AMERICAN AIRLINES ARENA"
+        },
+        {
+            "date": "SEPTEMBER 17",
+            "city": "MIAMI",
+            "venue": "AMERICAN AIRLINES ARENA"
+        },
+        {
+            "date": "SEPTEMBER 20",
+            "city": "HOUSTON",
+            "venue": "TOYOTA CENTER"
+        },
+        {
+            "date": "SEPTEMBER 21",
+            "city": "AUSTIN",
+            "venue": "FRANK ERWIN CENTER"
+        },
+        {
+            "date": "SEPTEMBER 22",
+            "city": "DALLAS",
+            "venue": "AMERICANAIRLINESCENTER"
+        },
+        {
+            "date": "SEPTEMBER 24",
+            "city": "NASHVILLE",
+            "venue": "BRIDGESTONEARENA"
+        },
+        {
+            "date": "DECEMBER 28",
+            "city": "BOSTON",
+            "venue": "TD GARDEN"
+        },
+        {
+            "date": "DECEMBER 30",
+            "city": "BROOKLYN",
+            "venue": "BARCLAYS CENTER"
+        },
+        {
+            "date": "DECEMBER 31",
+            "city": "BROOKLYN",
+            "venue": "BARCLAYS CENTER"
+        }
+    ]
+}
