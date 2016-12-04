@@ -40,6 +40,20 @@ var controller = {
                 var data = res.json();
                 return data;
             })
+    },
+
+    search: function(input) {
+        var inputArray = input.split(" ");
+        var uriSearch = "";
+        inputArray.forEach(function(word){
+            uriSearch = word + "%20";
+        });
+        var uri = spotifyBase + "/v1/search?q=" + uriSearch +"&type=track"
+        return fetch(uri)
+            .then(function(res){
+                var data = res.json();
+                return data;
+            })
     }
 }
 
