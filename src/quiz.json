@@ -1,0 +1,135 @@
+{
+    "title": "How Do Your Stances Align With Kanye's?",
+    "questions": [
+        {
+            "question": "What is the first question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        },
+        {
+            "question": "What is the second question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        },
+        {
+            "question": "What is the third question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        },
+        {
+            "question": "What is the fourth question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        },
+        {
+            "question": "What is the fifth question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        },
+        {
+            "question": "What is the sixth question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        },
+        {
+            "question": "What is the seventh question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        },
+        {
+            "question": "What is the eighth question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        },
+        {
+            "question": "What is the ninth question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        },
+        {
+            "question": "What is the tenth question?",
+            "answers": [
+                {
+                    "is_right": true,
+                    "value": "This one"
+                },
+                {
+                    "is_right": false,
+                    "value": "The next one"
+                }
+            ]
+        }
+    ]
+}
