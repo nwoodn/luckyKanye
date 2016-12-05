@@ -80,7 +80,7 @@ class Bio extends Component {
             <div>
                 <h1>Kanye Omari West</h1>
                 <p id="quote">"{this.state.quote}" --Kanye</p>
-                <button onClick={this.handleQuote}> New Quote </button>
+                <Button onClick={this.handleQuote}> New Quote </Button>
               
                 <script type="text" src="https://yepi.io/quote.js"/> 
                 <div id="followButton">
