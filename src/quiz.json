@@ -86,11 +86,11 @@
             "answers": [
                 {
                     "is_right": true,
-                    "value": "Yes, the prison system disproportionately jails young men of color"
+                    "value": "Yes, the prison system disproportionately jails young men of color."
                 },
                 {
                     "is_right": false,
-                    "value": "No, the system is fair and just"
+                    "value": "No, the system is fair and just."
                 }
             ]
         },
@@ -99,11 +99,11 @@
             "answers": [
                 {
                     "is_right": true,
-                    "value": "Yes, art and music programs are a vital part of a child's education"
+                    "value": "Yes, art and music programs are a vital part of a child's education."
                 },
                 {
                     "is_right": false,
-                    "value": "No, art and music programs should be the first ones cut in low-budget situations"
+                    "value": "No, art and music programs should be the first ones cut in low-budget situations."
                 }
             ]
         },
@@ -116,7 +116,7 @@
                 },
                 {
                     "is_right": false,
-                    "value": "No, bring back Michelle Obama"
+                    "value": "No, bring back Michelle Obama."
                 }
             ]
         },
