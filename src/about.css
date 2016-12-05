@@ -21,9 +21,28 @@ p {
     background-repeat: no-repeat;
 }
 
-ul {
-    max-width: 200px;
+.popularSongs h3 {
+ margin-left: 10px;
+ text-align: left;
 }
+
+.songList {
+    text-align: left;
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+}
+.songItem {
+    border-bottom: thin dotted white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.songItem img, .songItem p {
+    display: inline;
+    margin-left: 10px;
+}
+
 
 a {
     color: black;
