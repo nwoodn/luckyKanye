@@ -86,6 +86,221 @@
             "venue": "BRIDGESTONEARENA"
         },
         {
+            "date": "SEPTEMBER25",
+            "city": "COLUMBUS",
+            "venue": "SCHOTTENSTEIN"
+        },
+        {
+            "date": "SEPTEMBER27",
+            "city": "GRANDRAPIDS",
+            "venue": "VANANDELARENA"
+        },
+        {
+            "date": "SEPTEMBER28",
+            "city": "DETROIT",
+            "venue": "JOELOUISARENA"
+        },
+        {
+            "data": "SEPTEMBER30",
+            "city": "UNIVERSITYPARK",
+            "venue": "BRYCEJORDANCENTER"
+        },
+        {
+            "date": "OCTOBER1",
+            "city": "CLEVELAND",
+            "venue": "QUICKENLOANS"
+        },
+        {
+            "date": "OCTOBER2",
+            "city": "NEWYORK",
+            "venue": "THEMEADOWSMUSICFESTIVAL"
+        },
+        {
+            "date": "OCTOBER7",
+            "city": "CHICAGO",
+            "venue": "UNITEDCENTER"
+        },
+        {
+            "date": "OCTOBER8",
+            "city": "CHICAGO",
+            "venue": "ALLSTATEARENA"
+        },
+        {
+            "date": "OCTOBER10",
+            "city": "MINNEAPOLIS",
+            "venue": "XCELCENTER"
+        },
+        {
+            "date": "OCTOBER12",
+            "city": "WINNIPEG",
+            "venue": "MTSCENTRE"
+        },
+        {
+            "date": "OCTOBER15",
+            "city": "EDMONTON",
+            "venue": "ROGER'SPLACE"
+        },
+        {
+            "date": "OCTOBER17",
+            "city": "VANCOUVEROH",
+            "venue": "ROGERSARENA"
+        },
+        {
+            "date": "OCTOBER19",
+            "city": "SEATTLE",
+            "venue": "KEYARENA"
+        },
+        {
+            "date": "OCTOBER22",
+            "city": "OAKLAND",
+            "venue": "ORACLEARENA"
+        },
+        {
+            "date": "OCTOBER23",
+            "city": "OAKLAND",
+            "venue": "ORACLEARENA"
+        },
+        {
+            "date": "OCTOBER25",
+            "city": "LOSANGELES",
+            "venue": "FORUM"
+        },
+        {
+            "date": "OCTOBER26",
+            "city": "LOSANGELES",
+            "venue": "FORUM"
+        },
+        {
+            "date": "OCTOBER27",
+            "city": "LOSANGELES",
+            "venue": "FORUM"
+        },
+        {
+            "date": "OCTOBER29",
+            "city": "LASVEGAS",
+            "venue": "T-MOBILEARENA"
+        },
+        {
+            "date": "NOVEMBER1",
+            "city": "LOSANGELES",
+            "venue": "FORUM"
+        },
+        {
+            "date": "NOVEMBER2",
+            "city": "LOSANGELES",
+            "venue": "FORUM"
+        },
+        {
+            "date": "NOVEMBER3",
+            "city": "LOSANGELES",
+            "venue": "FORUM"
+        },
+        {
+            "date": "NOVEMBER17",
+            "city": "SANJOSE",
+            "venue": "SAPCENTER"
+        },
+        {
+            "date": "NOVEMBER19",
+            "city": "SACRAMENTO",
+            "venue": "GOLDEN1CENTER"
+        },
+        {
+            "date": "NOVEMBER20",
+            "city": "LOSANGELES",
+            "venue": "FORUM"
+        },
+        {
+            "date": "NOVEMBER22",
+            "city": "FRESNO",
+            "venue": "SAVEMARTCENTER"
+        },
+        {
+            "date": "NOVEMBER23",
+            "city": "ANAHEIM",
+            "venue": "HONDACENTER"
+        },
+        {
+            "date": "NOVEMBER26",
+            "city": "DALLAS",
+            "venue": "AMERICANAIRLINESCENTER"
+        },
+        {
+            "date": "NOVEMBER28",
+            "city": "DENVER",
+            "venue": "PEPSICENTER"
+        },
+        {
+            "date": "DECEMBER1",
+            "city": "SANANTONIO",
+            "venue": "AT&TCENTER"
+        },
+        {
+            "date": "DECEMBER2",
+            "city": "HOUSTON",
+            "venue": "TOYOTACENTER"
+        },
+        {
+            "date": "DECEMBER4",
+            "city": "FTLAUDERDALE",
+            "venue": "BB&T"
+        },
+        {
+            "date": "DECEMBER6",
+            "city": "ORLANDO",
+            "venue": "AMWAYCENTER"
+        },
+        {
+            "date": "DECEMBER8",
+            "city": "ATLANTA",
+            "venue": "PHILIPSARENA"
+        },
+        {
+            "date": "DECEMBER9",
+            "city": "COLUMBIA",
+            "venue": "COLONIALLIFEARENA"
+        },
+        {
+            "date": "DECEMBER11",
+            "city": "ALBANY",
+            "venue": "TIMESUNIONCENTER"
+        },
+        {
+            "date": "DECEMBER13",
+            "city": "PHILADELPHIA",
+            "venue": "WELLSFARGO"
+        },
+        {
+            "date": "DECEMBER15",
+            "city": "PHILADELPHIA",
+            "venue": "WELLSFARGOCENTER"
+        },
+        {
+            "date": "DECEMBER16",
+            "city": "NEWARK",
+            "venue": "PRUDENTIALCENTER"
+        },
+        {
+            "date": "DECEMBER18",
+            "city": "TORONTO",
+            "venue": "AIRCANADACENTRE"
+        },
+        {
+            "date": "DECEMBER20",
+            "city": "LOUISVILLE",
+            "venue": "KFCYUM!CENTER"
+        },
+        {
+            "date": "DECEMBER22",
+            "city": "DETROIT",
+            "venue": "PALACEATAUBURNHILLS"
+        },
+        {
+            "date": "DECEMBER27",
+            "city": "WASHINGTON",
+            "venue": "VERIZONCENTER"
+        },
+        {
             "date": "DECEMBER 28",
             "city": "BOSTON",
             "venue": "TD GARDEN"
