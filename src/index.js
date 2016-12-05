@@ -6,12 +6,10 @@ import Home from "./Home";
 import Events from './Events';
 import About from './About';
 import {Router, Route, hashHistory, IndexRoute} from 'react-router'; 
+//import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
-import 'bootstrap/dist/css/bootstrap.css';
-
 ReactDOM.render(
-  // <App />,
   <Router history={hashHistory}>
      <Route path="/" component={App}>
       <IndexRoute component={Home} />
