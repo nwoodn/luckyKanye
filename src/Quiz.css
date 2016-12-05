@@ -7,13 +7,23 @@ h3 {
     font-size: 150%;
 }
 
-form {
+form, .answer-choices {
     margin: auto;
-    width: 50%;
+    width: 80%;
 }
 
 .score {
     margin: 30px;
     font-weight: 100;
     font-size: 200%;
+}
+
+.radio {
+    text-align: left; 
+}
+
+@media screen and (min-width: 768px) {
+    .answer-choices {
+        width: 50%; 
+    }
 }

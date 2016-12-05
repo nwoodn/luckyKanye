@@ -17,7 +17,6 @@ class Quiz extends React.Component {
         this.computePercent = this.computePercent.bind(this);
         this.renderResult = this.renderResult.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.handleStart = this.handleStart.bind(this); 
     }
 
     componentDidMount() {
@@ -55,9 +54,10 @@ class Quiz extends React.Component {
         });
         var finalPercent = (score / total * 100);
         if (finalPercent >= 60) {
-            return <div className="score">You agree with {finalPercent}% of Kanye's opinions<br />You would enjoy having Kanye as President!</div>;
+            return <div className="score">You agree with {finalPercent}% of Kanye's opinions<br/>You would enjoy having Kanye as President!</div>
         } else {
             return <div className="score">You agree with {finalPercent}% of Kanye's opinions</div>;
+
         }
     }
 
@@ -69,21 +69,18 @@ class Quiz extends React.Component {
         this.setState({ step: 0 }); 
     }
 
-    handleStart() {
-        this.setState({ step: 0 });
-    }
 
     render() {
         if (this.state.step === null) { 
             return <div>
                        <h2>{this.state.quiz.title}</h2>
                        <h3>Take this quiz to find out!</h3>
-                       <button type="button" onClick={this.handleStart}>Start</button>
+                       <button className="btn btn-primary" id="start" type="button" onClick={this.handleClick}>Start</button>
                    </div>
         }
         return (
             <div className="quiz">
-                <h2>{this.state.quiz.title}</h2>
+                {/*<h2>{this.state.quiz.title}</h2>*/}
                 {(this.state.step < (this.state.quiz.questions.length)
                     ? (<Question
                         id={this.state.step}
@@ -92,8 +89,8 @@ class Quiz extends React.Component {
                         setAnswer={this.setAnswer} />)
                     : (
                         <div>
-                            <div>{this.renderResult()}</div>
-                            <button type="button" onClick={this.handleClick}>Start Over</button>
+                            <div>{this.computePercent()}</div>
+                            <button className="btn btn-primary" id="start-over" type="button" onClick={this.handleClick}>Start Over</button>
                         </div>
                     )
                 )}
@@ -107,30 +104,32 @@ class Question extends React.Component {
     render() {
         var answersNodes = Object.keys(this.props.data.answers).map((value, index) => {
             return (
-                <div className="radio">
-                    <input
-                        id={"answer-input-" + index}
-                        type="radio"
-                        value={value}
-                        onChange={this.props.setAnswer}
-                        defaultChecked={false}
-                        name="answer" />
-                    {' '}
-                    <label htmlFor={"answer-input-" + index}>
-                        {this.props.data.answers[index].value}
-                    </label>
+                <div className="answer-choices">
+                    <div className="radio">
+                        <input
+                            id={"answer-input-" + index}
+                            type="radio"
+                            value={value}
+                            onChange={this.props.setAnswer}
+                            defaultChecked={false}
+                            name="answer" />
+                        {' '}
+                        <label htmlFor={"answer-input-" + index}>
+                            {this.props.data.answers[index].value}
+                        </label>
+                    </div>
                 </div>
             )
         });
 
         return (
             <div>
-                <h3>{(parseInt(this.props.id) + 1) + ": " + this.props.data.question}</h3>
+                <h3>{(parseInt(this.props.id) + 1) + ". " + this.props.data.question}</h3>
                 <form>
                     {answersNodes}
                     <br />
-                    <button type="button" onClick={this.props.validateAnswers}>
-                        Continue
+                    <button className="btn btn-primary" type="button" id="next" onClick={this.props.validateAnswers}>
+                        Next
                     </button>
                 </form>
             </div>
