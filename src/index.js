@@ -18,5 +18,6 @@ ReactDOM.render(
       <Route path="about" component={About} />
      </Route>
   </Router>, 
+
   document.getElementById('root')
 );
