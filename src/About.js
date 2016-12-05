@@ -225,7 +225,7 @@ class Search extends Component {
 
   undo(){
     SEARCHED=false;
-    console.log("SEARCHED");
+    //console.log("SEARCHED");
     this.forceUpdate();
   }
 
@@ -243,28 +243,27 @@ class Search extends Component {
 
 class FilterSearch extends Component {
 
-  // undo(){
-  //   this.forceUpdate();
-  // }
-
   render(){
-    var songArray = this.props.tracks.filter(function(trackObj){
-        var artistsArray = trackObj.artists; 
-      //console.log(artistsArray);
-      var artistNamesArray = artistsArray.map(function(artistObj){
-        return artistObj.name;
+    if(SEARCHED){
+      var songArray = this.props.tracks.filter(function(trackObj){
+          var artistsArray = trackObj.artists; 
+        //console.log(artistsArray);
+        var artistNamesArray = artistsArray.map(function(artistObj){
+          return artistObj.name;
+        })
+          //console.log(artistNamesArray);
+        //  var test = artistNamesArray.includes("Kanye West");
+        //  console.log(test);
+        return artistNamesArray.includes("Kanye West");;
       })
-        //console.log(artistNamesArray);
-      //  var test = artistNamesArray.includes("Kanye West");
-      //  console.log(test);
-      return artistNamesArray.includes("Kanye West");;
-    })
-    //console.log(songArray);
-    var returnValue = <Song tracks={songArray} />;
-    if(songArray.length ===  0 && SEARCHED) {
-      returnValue = <p> No Songs Found </p>;
+      //console.log(songArray);
+      var returnValue = <Song tracks={songArray} />;
+      if(songArray.length ===  0) {
+        returnValue = <p> No Songs Found </p>;
+      }
+    } else {
+      returnValue = null;
     }
-
 
     return(returnValue);
   }
