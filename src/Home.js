@@ -85,7 +85,7 @@ class NewsItem extends React.Component {
         var snippet = this.props.article.snippet;
         console.log(newsHeadline);
         return (
-            <div>
+            <div className="news-article">
                 <h4>{newsHeadline}</h4>
                 <p>{snippet}</p>
             </div>

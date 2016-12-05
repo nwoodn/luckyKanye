@@ -64,7 +64,7 @@ a {
 }
 
 @media screen and (min-width:768px){
-    #profPic{
+    #profPic {
         height: 200px;
         float:left;
         margin-right: 50px;
