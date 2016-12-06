@@ -36,7 +36,7 @@ class Bio extends Component {
     this.handleQuote = this.handleQuote.bind(this);
     this.state = {
       showMore:false,
-      bio:"Kanye Omari West was born in Atlanta, Georgia, on June 8, 1977. He left college to pursue a musical career, producing tracks for Jay-Z while polishing his demo. He released The College Dropout in 2004. It sold 2.6 million copies and won Best Rap Album. His follow-up releases have been",
+      bio:"Synopsis: Kanye Omari West was born in Atlanta, Georgia, on June 8, 1977. He left college to pursue a musical career, producing tracks for Jay-Z while polishing his demo. He released The College Dropout in 2004. It sold 2.6 million copies and won Best Rap Album. His follow-up releases have been equally successful and West has become a celebrity famous for his outrageous and entertaining antics and marriage to reality television star Kim Kardashian.",
       link:"Show more",
       quote:"should be a quote"
     };
@@ -56,7 +56,7 @@ class Bio extends Component {
   handleClick(){   
     if(this.state.showMore === false) {
       this.setState({
-        bio: "Kanye Omari West was born in Atlanta, Georgia, on June 8, 1977. He left college to pursue a musical career, producing tracks for Jay-Z while polishing his demo. He released The College Dropout in 2004. It sold 2.6 million copies and won Best Rap Album. His follow-up releases have been equally successful and West has become a celebrity famous for his outrageous and entertaining antics and marriage to reality television star Kim Kardashian.",
+        bio: "Synopsis: Kanye Omari West was born in Atlanta, Georgia, on June 8, 1977. He left college to pursue a musical career, producing tracks for Jay-Z while polishing his demo. He released The College Dropout in 2004. It sold 2.6 million copies and won Best Rap Album. His follow-up releases have been equally successful and West has become a celebrity famous for his outrageous and entertaining antics and marriage to reality television star Kim Kardashian. Early Career: Rapper, record producer and singer Kanye Omari West was born in Atlanta, Georgia, on June 8, 1977. His parents divorced when he was three. He was raised on Chicago's South Side by his mother, an English professor, and spent summers with his father, an award-winning photographer who became a church counselor. West graduated from Polaris High School and completed one year of art school at Chicago State University. After spending time rapping and working with local artists, West moved to New York in 2001 to pursue his music career full time. Respected rapper Jay-Z hired him to produce songs for his album The Blueprint, which sold more than 420,000 copies in the first week alone. West went on to produce for a handful of stars including rapper Ludacris and singer Beyonce. While serving as producer to the stars, West cut his own demo and began shopping it around. He signed a deal with Roc-A-Fella Records, Jay-Z's label, in 2002 and began recording in the studio. In October of that year, West fell asleep while driving home from a recording session and was involved in a serious head-on car collision that left him with a fractured jaw. Breakout Success: The tragic accident almost cost West his life, but he channeled the experience into his music. With his jaw wired shut, he returned to the recording studio to complete his debut release The College Dropout, which featured the single Through the Wire, inspired by the car accident. The album, which was released in 2004, sold 2.6 million copies and was his breakout success. While he rose to the top of the music industry as a solo artist, West continued to produce for other artists including Twista, Janet Jackson, Brandy and Common. He also started his own label, GOOD Music (an acronym for Getting Out Our Dreams), with Sony BMG, and released John Legend's Get Lifted (2004) andCommon's Be (2005). In 2005, West won an impressive 10 Grammy nominations and wins for Best Rap Album for The College Dropout, Best Rap Song for Jesus Walks, and an R&B songwriting Grammy for You Don't Know, which he shared with Alicia Keys and Harold Lilly. He matched the success of his debut with subsequent hit albums Late Registration (2005) and Graduation (2007). West won Best Rap Song Grammys for his hits Diamonds from Sierra Leone, the lead single from Late Registration, and Good Life from Graduation. For his hit Gold Digger from Late Registration he took home the Best Rap Solo Performance award in 2005. His collaboration with Common on Southside earned West the Grammy for Best Rap Performance by a Duo or Group in 2007. ",
         showMore:true,
         link:"Show Less"
       });
@@ -77,19 +77,24 @@ class Bio extends Component {
 
     render(){
         return(
-            <div>
-                <h1>Kanye Omari West</h1>
-                <p id="quote">"{this.state.quote}" --Kanye</p>
-                <Button onClick={this.handleQuote}> New Quote </Button>
-              
-                <script type="text" src="https://yepi.io/quote.js"/> 
-                <div id="followButton">
-              {/*    <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x&size=basic&theme=light" width="300" height="56" scrolling="no" frameBorder="0" allowTransparency="true"></iframe> */}
+            <div className="top">
+                <h1 className="name">Kanye Omari West</h1>
+                <div className="quote">
+                  <p id="quote">"{this.state.quote}" --Kanye</p>
+                  <Button id="quoteButton" onClick={this.handleQuote}> New Quote </Button>
                 </div>
+              
+             {/*    <script type="text" src="https://yepi.io/quote.js"/> 
+                <div id="followButton">
+              {/*    <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x&size=basic&theme=light" width="300" height="56" scrolling="no" frameBorder="0" allowTransparency="true"></iframe> 
+                </div> */}
                 <img  id="profPic" src="https://cmgajcmusic.files.wordpress.com/2016/06/kanye-west2.jpg"alt="kanye"/>
-                <h4>Biography </h4>
-                <p> {this.state.bio}</p>
-                  <p onClick={this.handleClick} id="show"> {this.state.link} </p>  
+                <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x&size=basic&theme=light" width="300" height="56" scrolling="no" frameBorder="0" allowTransparency="true"></iframe> 
+                <div className="bio">
+                  <h4>Biography </h4>
+                  <p> {this.state.bio}</p>
+                    <p onClick={this.handleClick} id="show"> {this.state.link} </p>  
+                </div>
             </div>
         )
     };
@@ -117,8 +122,8 @@ class Songs extends Component {
 
   render() {
     return(
-      <div className="popularSongs">
-        <h3> Kanye's Top Songs: </h3>
+      <div className="songSection">
+        <h3> Kanye's Top Songs </h3>
         <Song tracks={this.state.tracks} search={false}/> 
       </div>
     );
@@ -139,9 +144,11 @@ class Song extends Component {
     });
 
     return (
-      <div className="songList">
+      <div className="songSection">
         <h3>{songTypes}</h3>
-        {songArray}
+        <div className="songList">
+          {songArray}
+        </div>
       </div>
     );
   }
@@ -152,7 +159,7 @@ class SongItem extends Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.state = {icon:Play};
+    this.state = {icon:Play,showAlbum:false,numClicks:0};
   }
 
   handleClick() {
@@ -164,13 +171,13 @@ class SongItem extends Component {
       //console.log("1");
       audio = new Audio(this.props.track.preview_url);      
       audio.play();
-      //this.setState({icon:Pause});
+      this.setState({showAlbum:true});
       SONG_STATUS = {playing:true, songPlaying:this.props.track.name,audio:audio};
     } else { // a song is playing
       if( this.props.track.name === SONG_STATUS.songPlaying){ //song clicked is song playing
         //console.log("2");
         SONG_STATUS.audio.pause();
-        //this.setState({icon:Play});
+        this.setState({showAlbum:false});
         //console.log("pause");
         SONG_STATUS = {playing:false, songPlaying:"", audio:new Audio()};
       } else { // song clicked isnt song playing
@@ -178,7 +185,7 @@ class SongItem extends Component {
         SONG_STATUS.audio.pause();
         audio = new Audio(this.props.track.preview_url);
         audio.play();
-        //this.setState({icon:Pause});
+        this.setState({showAlbum:true});
         SONG_STATUS = {playing:true, songPlaying:this.props.track.name,audio:audio};
       }
     }
@@ -187,7 +194,11 @@ class SongItem extends Component {
     } else {
       this.setState({icon:Play});
     }
-
+    // if(this.state.numClicks % 2 === 0 && window.innerWidth > 763){
+    //   this.setState({showAlbum:true, numClicks:this.state.numClicks +1});
+    // } else {
+    //   this.setState({showAlbum:false, numClicks:this.state.numClicks +1});
+    // }
   }
 
   render(){
@@ -195,8 +206,25 @@ class SongItem extends Component {
 
     return(
       <div className="songItem" onClick={this.handleClick}>
-        <img src={this.state.icon} alt="play"/>
+        <img src={this.state.icon}/>
         <p id="song">{this.props.track.name}</p>
+        {this.state.showAlbum ?
+          <AlbumCard albumInfo={this.props.track.album}/> :
+            null
+        }
+      </div>
+    );
+  }
+}
+
+class AlbumCard extends Component {
+  
+  render(){
+
+    return(
+      <div className="albumCard">
+        <img src={this.props.albumInfo.images[0].url}/>
+        <h4>{this.props.albumInfo.name}</h4>
       </div>
     );
   }
@@ -259,7 +287,7 @@ class FilterSearch extends Component {
       //console.log(songArray);
       var returnValue = <Song tracks={songArray} />;
       if(songArray.length ===  0) {
-        returnValue = <p> No Songs Found </p>;
+        returnValue = <p id="noSongs"> No Songs Found </p>;
       }
     } else {
       returnValue = null;
@@ -294,8 +322,8 @@ class SearchForm extends Component {
         <InputGroup>
           <FormControl type="text" placeholder="Search for a song..." onChange={this.handleChange} />
           <InputGroup.Button>
-            <Button onClick={this.handleClick}><Glyphicon glyph="search" aria-label="Search" />search</Button>
-            <Button onClick={this.props.undo}> Undo Search </Button>
+            <Button onClick={this.handleClick}><Glyphicon glyph="search" aria-label="Search" /></Button>
+            <Button onClick={this.props.undo}><Glyphicon glyph="undo" aria-label="undo" />Undo</Button>
           </InputGroup.Button>
         </InputGroup>
       </Form>
