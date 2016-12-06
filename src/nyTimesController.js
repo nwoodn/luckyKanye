@@ -10,9 +10,9 @@ var controller = {
         var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         url += '?' + $.param({
             'api-key': "9298dbf29fe44ca6a9da2e8ddfb42452",
-            'q': "kanye west"
+            'q': "kanye west president 2020",
+            'source': "The New York Times"
         });
-        console.log(url);
         return fetch(url)
             .then(function (res) { return res.json() })
 

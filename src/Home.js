@@ -63,12 +63,12 @@ class Home extends React.Component {
 class NewsList extends React.Component {
 
     render() {
-        var newsItemArray = (this.props.articles).map(function (newsObj) {
+        var newsItemArray = (this.props.articles.slice(0, 4)).map(function (newsObj) {
             return <NewsItem article={newsObj} />
         });
 
         return (
-            <div>
+            <div className="news-list">
                 {newsItemArray}
             </div>
         );
@@ -81,14 +81,15 @@ class NewsItem extends React.Component {
 
     render() {
         var newsObj = this.props.article;
-        var newsHeadline = this.props.article.headline.main;
+        var newsHeadline = (this.props.article.headline.print_headline || this.props.article.headline.main);
         var snippet = this.props.article.snippet;
-        console.log(newsHeadline);
+        snippet = snippet.substring(0, snippet.length - 3);
+        var link = this.props.article.web_url;
         return (
-            <div className="news-article">
-                <h4>{newsHeadline}</h4>
-                <p>{snippet}</p>
-            </div>
+            <div className="news-card"><a href={link}>
+                <h4 className="article-headline">{newsHeadline}</h4>
+                <p className="article-content">"{snippet}"</p>
+            </a></div>
         );
     }
 }
