@@ -165,7 +165,7 @@ class PoliticalStances extends React.Component {
     render() {
         return (
             <div className="political-stances">
-                <h3>"I Don't Have Views on Politics, Just on Humanity"</h3>
+                <h3>"I Don't Have Views on Politics, Just on Humanity" - Kanye</h3>
             </div>
         )
     }
