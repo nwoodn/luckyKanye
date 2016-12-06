@@ -86,10 +86,12 @@ class NewsItem extends React.Component {
         snippet = snippet.substring(0, snippet.length - 3);
         var link = this.props.article.web_url;
         return (
-            <div className="news-card"><a href={link}>
-                <h4 className="article-headline">{newsHeadline}</h4>
-                <p className="article-content">"{snippet}"</p>
-            </a></div>
+            <div className="news-card">
+                <a href={link}>
+                    <h4 className="article-headline">{newsHeadline}</h4>
+                    <p className="article-content">"{snippet}"</p>
+                </a>
+            </div>
         );
     }
 }

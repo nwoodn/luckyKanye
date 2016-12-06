@@ -2,6 +2,7 @@ import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
 import quizJSON from './quiz.json';
 import './Quiz.css';
+import politicalViews from './PoliticalStances.json'; 
 
 class Quiz extends React.Component {
 
@@ -162,10 +163,22 @@ class Question extends React.Component {
 }
 
 class PoliticalStances extends React.Component {
+
+    constructor(props) {
+        super(props); 
+        this.state = {
+            stances: {}
+        };
+    }
+
+    componentDidMount() {
+        this.setState({ stances: politicalViews });
+    }
+
     render() {
         return (
             <div className="political-stances">
-                <h3>"I Don't Have Views on Politics, Just on Humanity" - Kanye</h3>
+                <h3>"I Don't Have Views on Politics, Just on Humanity" -- Kanye</h3>
             </div>
         )
     }
