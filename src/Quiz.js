@@ -27,9 +27,9 @@ class Quiz extends React.Component {
         this.setState({ step: (this.state.step + 1) });
     }
 
-    setAnswer(event) {
+    setAnswer(index) {
         this.state.user_answers[this.state.step] = this.state.user_answers[this.state.step] || [];
-        this.state.user_answers[this.state.step][parseInt(event.target.value)] = event.target.checked;
+        this.state.user_answers[this.state.step][parseInt(index)] = true;
     }
 
     isAnswerRight(index) {
@@ -73,6 +73,7 @@ class Quiz extends React.Component {
     render() {
         if (this.state.step === null) { 
             return <div>
+                       <PoliticalStances />
                        <h2>{this.state.quiz.title}</h2>
                        <h3>Take this quiz to find out!</h3>
                        <button className="btn btn-primary" id="start" type="button" onClick={this.handleClick}>Start</button>
@@ -101,6 +102,20 @@ class Quiz extends React.Component {
 
 class Question extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedOption: ""
+        }; 
+        this.handleOptionChange = this.handleOptionChange.bind(this); 
+    }
+
+    handleOptionChange(event) {
+        this.setState({
+            selectedOption: event.target.value
+        }); 
+    }
+
     render() {
         var answersNodes = Object.keys(this.props.data.answers).map((value, index) => {
             return (
@@ -109,9 +124,9 @@ class Question extends React.Component {
                         <input
                             id={"answer-input-" + index}
                             type="radio"
-                            value={value}
-                            onChange={this.props.setAnswer}
-                            defaultChecked={false}
+                            value={this.props.data.answers[index].value}
+                            onChange={this.props.handleOptionChange}
+                            checked={this.state.selectedOption === this.props.data.answers[index].value}
                             name="answer" />
                         {' '}
                         <label htmlFor={"answer-input-" + index}>
@@ -128,12 +143,22 @@ class Question extends React.Component {
                 <form>
                     {answersNodes}
                     <br />
-                    <button className="btn btn-primary" type="button" id="next" onClick={this.props.validateAnswers}>
+                    <button className="btn btn-primary" type="button" id="next" onClick={() => {this.props.setAnswer(this.state.selectedOption); this.props.validateAnswers() } }>
                         Next
                     </button>
                 </form>
             </div>
         );
+    }
+}
+
+class PoliticalStances extends React.Component {
+    render() {
+        return (
+            <div className="political-stances">
+                <h3>"I Don't Have Views on Politics, Just on Humanity"</h3>
+            </div>
+        )
     }
 }
 

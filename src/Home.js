@@ -81,7 +81,7 @@ class NewsItem extends React.Component {
 
     render() {
         var newsObj = this.props.article;
-        var newsHeadline = this.props.article.headline.print_headline;
+        var newsHeadline = this.props.article.headline.main;
         var snippet = this.props.article.snippet;
         console.log(newsHeadline);
         return (
