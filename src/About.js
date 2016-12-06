@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-
-import controller from './controller.js';
-
-import {Form, FormControl, InputGroup, Button, Glyphicon, Image} from 'react-bootstrap';
+import {Form, FormControl, InputGroup, Button, Glyphicon} from 'react-bootstrap';
 
 import Play from '../public/playButton.svg';
 import Pause from '../public/pause.svg';
 
+import controller from './controller.js';
 import './about.css';
 
-//import Frame from 'react-frame-component';
-
-var SONG_STATUS = {playing:false, songPlaying:"", audio: new Audio()};
 var SEARCHED = false;
 
 class About extends Component {
@@ -109,7 +104,7 @@ class Songs extends Component {
     this.fetchData('5K4W6rqBFWDnAN6FQUkS6x');
 }
 
-  fetchData(artistId) {
+  fetchData(artistId, audio) {
     //console.log("fetching");
     var thisComponent = this;
     controller.popular(artistId)
@@ -132,15 +127,38 @@ class Songs extends Component {
 
 class Song extends Component {
 
+    constructor(props){
+    super(props);
+    this.update =  this.update.bind(this);
+    this.state = {songPlaying:"", audioPlaying:"", sound:false};
+    }
+
+    update(songName, audio, sound){
+      this.setState({songPlaying:songName, audioPlaying:audio, sound:sound});
+    }
+
   render() {
     if(SEARCHED){
       var songTypes="Search Results";
     } else {
       var songTypes=null;
     }
-      var songArray = this.props.tracks.map(function(trackObj){
-      //console.log(trackObj);
-      return <SongItem track={trackObj} key={trackObj.name}/>
+    var thisComponent = this
+      var songArray = this.props.tracks.map(function(trackObj){ // making song item
+
+        var songPlaying = thisComponent.state.songPlaying;
+        //console.log(songPlaying);
+        var audioPlaying = thisComponent.state.audioPlaying;
+        var sound = thisComponent.state.sound;
+        if(songPlaying === trackObj.name) {//songplaying = this track
+          var icon = Pause;
+          if(window.innerWidth > 768)
+            var showAlbum = true;
+      } else {
+          var icon = Play;
+          var showAlbum = false;
+      }
+        return <SongItem sound={sound} icon={icon} showAlbum={showAlbum} audioPlaying={audioPlaying} update={thisComponent.update} track={trackObj} key={trackObj.name}/>
     });
 
     return (
@@ -159,56 +177,43 @@ class SongItem extends Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleAudio = this.handleAudio.bind(this);
     this.state = {icon:Play,showAlbum:false,numClicks:0};
   }
 
+  handleAudio(){
+    console.log("here");
+    this.props.update("","",false);
+  }
+
   handleClick() {
-    // console.log(this.state);
-    //var playOrPauseImg = '../public/playButton.svg';
      var audio = new Audio();
-    //console.log(this.state);
-    if(!SONG_STATUS.playing) { // song is not playing
-      //console.log("1");
-      audio = new Audio(this.props.track.preview_url);      
+    if(!this.props.sound) { // song is not playing
+      audio = new Audio(this.props.track.preview_url); 
+      audio.onended = this.handleAudio;
       audio.play();
-      this.setState({showAlbum:true});
-      SONG_STATUS = {playing:true, songPlaying:this.props.track.name,audio:audio};
+      this.props.update(this.props.track.name, audio, true);
     } else { // a song is playing
-      if( this.props.track.name === SONG_STATUS.songPlaying){ //song clicked is song playing
-        //console.log("2");
-        SONG_STATUS.audio.pause();
-        this.setState({showAlbum:false});
-        //console.log("pause");
-        SONG_STATUS = {playing:false, songPlaying:"", audio:new Audio()};
+      if(this.props.icon === Pause){ //song clicked is song playing
+        this.props.audioPlaying.pause();
+        this.props.update("", "", false);
       } else { // song clicked isnt song playing
-        //console.log('3');
-        SONG_STATUS.audio.pause();
+        this.props.audioPlaying.pause();
         audio = new Audio(this.props.track.preview_url);
+        audio.onended = this.handleAudio;
         audio.play();
-        this.setState({showAlbum:true});
-        SONG_STATUS = {playing:true, songPlaying:this.props.track.name,audio:audio};
+        this.props.update(this.props.track.name, audio, true);
       }
     }
-    if(SONG_STATUS.songPlaying === this.props.track.name) {
-      this.setState({icon:Pause});
-    } else {
-      this.setState({icon:Play});
-    }
-    // if(this.state.numClicks % 2 === 0 && window.innerWidth > 763){
-    //   this.setState({showAlbum:true, numClicks:this.state.numClicks +1});
-    // } else {
-    //   this.setState({showAlbum:false, numClicks:this.state.numClicks +1});
-    // }
   }
 
   render(){
-    //console.log(this.props);
 
     return(
       <div className="songItem" onClick={this.handleClick}>
-        <img src={this.state.icon}/>
+        <img src={this.props.icon}/>
         <p id="song">{this.props.track.name}</p>
-        {this.state.showAlbum ?
+        {this.props.showAlbum ?
           <AlbumCard albumInfo={this.props.track.album}/> :
             null
         }
