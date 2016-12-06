@@ -28,16 +28,16 @@ class Quiz extends React.Component {
         this.setState({ step: (this.state.step + 1) });
     }
 
-    setAnswer(event) {
+    setAnswer(index) {
         this.state.user_answers[this.state.step] = this.state.user_answers[this.state.step] || [];
-        this.state.user_answers[this.state.step][parseInt(event.target.value)] = event.target.checked;
+        this.state.user_answers[this.state.step][parseInt(index)] = true;
     }
 
     isAnswerRight(index) {
         var result = true;
-        Object.keys(this.state.quiz.questions[index].answers).map((value, answer_index) => {
+        Object.keys(this.state.quiz.questions[index].answers).map((value) => {
             var answer = this.state.quiz.questions[index].answers[value]
-            if (!this.state.user_answers[index] || (answer.is_right !== (this.state.user_answers[index][value] || false))) {
+            if (!this.state.user_answers[index] || (answer.is_right != (this.state.user_answers[index][value] || false))) {
                 result = false;
             }
         });
@@ -50,6 +50,7 @@ class Quiz extends React.Component {
         Object.keys(this.state.quiz.questions).map((value, index) => {
             total++;
             if (this.isAnswerRight(index)) {
+                console.log("increment score");
                 score = score + 1;
             }
         });
@@ -107,6 +108,24 @@ class Quiz extends React.Component {
 
 class Question extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedOption: "",
+            selectedNum: undefined
+        }
+        this.handleOptionChange = this.handleOptionChange.bind(this);
+    }
+
+    handleOptionChange(event) {
+        this.setState({
+            selectedOption: event.target.value,
+            selectedNum: (event.target.id.substring(event.target.id.length - 1))
+        });
+    }
+
+    
+
     render() {
         var answersNodes = Object.keys(this.props.data.answers).map((value, index) => {
             return (
@@ -115,9 +134,9 @@ class Question extends React.Component {
                         <input
                             id={"answer-input-" + index}
                             type="radio"
-                            value={value}
-                            onChange={this.props.setAnswer}
-                            defaultChecked={false}
+                            value={this.props.data.answers[index].value}
+                            onChange={this.handleOptionChange}
+                            checked={this.state.selectedOption === this.props.data.answers[index].value}
                             name="answer" />
                         {' '}
                         <label htmlFor={"answer-input-" + index}>
@@ -134,7 +153,7 @@ class Question extends React.Component {
                 <form>
                     {answersNodes}
                     <br />
-                    <button className="btn btn-primary" type="button" id="next" onClick={this.props.validateAnswers}>
+                    <button className="btn btn-primary" type="button" id="next" onClick={() => { this.props.setAnswer(this.state.selectedNum); this.props.validateAnswers() } }>
                         Next
                     </button>
                 </form>
