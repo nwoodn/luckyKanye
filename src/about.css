@@ -56,19 +56,16 @@ p {
 
 
 @media screen and (min-width:768px){
-    #search {
-        margin-right: 500px;
-    }
 
     .iFrame{
         transform: translateX(-250px);
     }
 
-    .search {
-        margin-right: 500px;
-        float: left;
+    #search {
+        margin-right: 3000px;
         width: 300px;
         margin-bottom: 25px;
+        position: relative;
     }
 
     #noSongs {
@@ -90,7 +87,6 @@ p {
 
     .quote {
         width: 50%;
-        /*height: 200px;*/
         float: right;
     }
     #quote {
@@ -100,7 +96,6 @@ p {
     }
     #quoteButton{
         margin-top: 15px;
-        /*transform: translateX(-5%);  */
     }
     #followButton{
         float: right;
@@ -139,7 +134,6 @@ p {
         margin: auto;
         width: 50%;
         padding: 10px;
-        /*height: 150px;*/
     }
     #quote {
         font-size: 20px;
@@ -158,10 +152,21 @@ p {
     .iFrame {
         transform: translateX(-150px);
     }
+    .flex {
+        display: flex;
+    }
+    .flex #profPic {
+        width:auto;
+        height:auto;
+        max-height: 40rem;
+        max-width: 40%;
+        margin-bottom: 20px;
+
+    }
     .bio{
         float:right;
         width: 45%;
-        transform: translateY(-280px);
+        margin-right: 50px;
     }
     .bio p {
         font-size: 18px;
@@ -171,25 +176,14 @@ p {
     }
     .songSection {
         width: 400px;
+        margin-left: 20px;
     }
-}
-@media screen and (min-width:2000px){
-    #profPic {
-        margin-left: 150px;
+    #search{
+        margin-left: 45px;
     }
-    .bio {
-        margin-right: 150px;
-        transform:translatey(-600px);
-    }
-    .search {
-        transform:translateX(1200px) translateY(-400px);
-    }
+    #aboutPage {
+        max-width: 1200px;
+        margin: auto;
 
-    .songSection {
-        transform:translateX(600px) translateY(-200px);
     }
-    .songSection h3 {
-        transform:translateX(500px) translateY(-200px);
-    }
-
 }

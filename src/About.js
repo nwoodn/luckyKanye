@@ -14,8 +14,8 @@ class About extends Component {
 
   render() {
     return (
-      <div>
-        <Bio />
+      <div id="aboutPage">
+        <Bio/>
         <Search />
         <Songs />
       </div>
@@ -78,13 +78,14 @@ class Bio extends Component {
           <p id="quote">"{this.state.quote}" --Kanye</p>
           <Button id="quoteButton" onClick={this.handleQuote}> New Quote </Button>
         </div>
-
-        <img id="profPic" src="https://cmgajcmusic.files.wordpress.com/2016/06/kanye-west2.jpg" alt="kanye" />
+        <div className="flex">
+        <img  id="profPic" src="https://cmgajcmusic.files.wordpress.com/2016/06/kanye-west2.jpg" alt="kanye" />
         <iframe className ="iFrame"src="https://embed.spotify.com/follow/1/?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x&size=basic&theme=light" width="300" height="56" scrolling="no" frameBorder="0" allowTransparency="true"></iframe>
-        <div className="bio">
+        <div className="bio ">
           <h4>Biography </h4>
           <p> {this.state.bio}</p>
           <p onClick={this.handleClick} id="show"> {this.state.link} </p>
+          </div>
         </div>
       </div>
     )
