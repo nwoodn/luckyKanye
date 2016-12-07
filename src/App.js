@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation';
-import Quiz from './Quiz';
-import logo from './logo.svg';
 import './App.css';
-import Events from './Events';
 
-import About from './About';
 
 class App extends Component {
   render() {

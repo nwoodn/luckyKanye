@@ -43,12 +43,16 @@ label {
     max-width: 90%; 
 }
 
+.kanyay {
+    max-width: 80%; 
+}
+
 @media screen and (min-width: 768px) {
     .answer-choices {
         width: 50%; 
     }
     
-    .kanye-happy {
+    .kanye-happy, .kanyay {
         max-width: 60%; 
     }
 }
@@ -58,7 +62,7 @@ label {
         width: 40%; 
     }
 
-    .kanye-happy {
+    .kanye-happy, .kanyay {
         max-width: 55%
     }
 }

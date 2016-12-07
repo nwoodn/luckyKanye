@@ -60,8 +60,10 @@ class StanceCard extends React.Component {
     render() {
         var title = this.props.stance.topic;
         var description = this.props.stance.description;
+        var noSpace = title.replace(" ", "-"); 
         return (
-            <Col className="stance-card" md={6}>
+            <Col className="stance-card" md={5}>
+                <div className="photo" id={noSpace} />
                 <h5 className="stance-title">{title}</h5>
                 <p className="stance-description">{description}</p>
             </Col>
