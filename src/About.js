@@ -80,7 +80,7 @@ class Bio extends Component {
         </div>
 
         <img id="profPic" src="https://cmgajcmusic.files.wordpress.com/2016/06/kanye-west2.jpg" alt="kanye" />
-        <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x&size=basic&theme=light" width="300" height="56" scrolling="no" frameBorder="0" allowTransparency="true"></iframe>
+        <iframe className ="iFrame"src="https://embed.spotify.com/follow/1/?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x&size=basic&theme=light" width="300" height="56" scrolling="no" frameBorder="0" allowTransparency="true"></iframe>
         <div className="bio">
           <h4>Biography </h4>
           <p> {this.state.bio}</p>
@@ -279,7 +279,7 @@ class FilterSearch extends Component {
     return (
       <div>
         {show ?
-          <h3> Search Results </h3> :
+          <h3 className="h3"> Search Results </h3> :
           null
         }
         {returnValue}
