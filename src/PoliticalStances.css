@@ -1,0 +1,28 @@
+h5 {
+    margin: 20px;
+    font-size: 140%;
+}
+
+.position-div {
+    margin: 30px;
+}
+
+.stance-card p {
+    text-align: left;
+}
+
+.positions-header {
+    font-size: 300%;
+}
+
+.stance-list {
+    margin-top: 50px;
+}
+
+.stance-title {
+    font-size: 150%;
+}
+
+.stance-description {
+    font-size: 120%;
+}

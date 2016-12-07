@@ -2,6 +2,11 @@
     margin: 50px;
 }
 
+.quiz-title {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
 h3 {
     margin: 20px;
     font-size: 150%;

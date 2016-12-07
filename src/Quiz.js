@@ -11,9 +11,9 @@ class Quiz extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            quiz: {},
+            quiz: quizJSON,
             user_answers: [],
-            step: null
+            step: 0
         }
         this.setState = this.setState.bind(this);
         this.nextStep = this.nextStep.bind(this);
@@ -21,10 +21,6 @@ class Quiz extends React.Component {
         this.computePercent = this.computePercent.bind(this);
         this.renderResult = this.renderResult.bind(this);
         this.handleClick = this.handleClick.bind(this);
-    }
-
-    componentDidMount() {
-        this.setState({ quiz: quizJSON });
     }
 
     nextStep() {
@@ -82,14 +78,6 @@ class Quiz extends React.Component {
 
 
     render() {
-        if (this.state.step === null) {
-            return <div>
-                       <PoliticalStances />
-                       <h2>{this.state.quiz.title}</h2>
-                       <h3>Take this quiz to find out!</h3>
-                       <button className="btn btn-primary" id="start" type="button" onClick={this.handleClick}>Start</button>
-                   </div>
-        }
         var now = this.state.step * 10;
         return (
             <div className="quiz">
@@ -170,14 +158,4 @@ class Question extends React.Component {
     }
 }
 
-class PoliticalStances extends React.Component {
-    render() {
-        return (
-            <div className="political-stances">
-                <h3>"I Don't Have Views on Politics, Just on Humanity" -- Kanye</h3>
-            </div>
-        )
-    }
-}
-export { PoliticalStances }; 
 export default Quiz;

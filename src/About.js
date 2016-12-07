@@ -78,7 +78,7 @@ class Bio extends Component {
     render(){
       return(
           <div>
-              <h1>Kanye Omari West</h1>
+              <h1 className="block-font">Kanye Omari West</h1>
               <div className="quote-block">
                 <p id="quote">"{this.state.quote}" -- Kanye</p>
                 <button onClick={this.handleQuote}> More Quotes </button>
