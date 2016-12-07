@@ -1,11 +1,13 @@
 #profPic {
     max-width: 100%;
     height: auto;
-    width: auto\9;
+    width: auto;
+    margin-top: 10px;
 }
 #quote {
     font-size: 12pt;
     color: gray;
+    display: block;
 }
 #show{
     color: blue;
@@ -20,8 +22,13 @@ p {
     background-size: 100%;
     background-repeat: no-repeat;
 }
+iframe{
+    margin-top: 15px;
+    width:150px;
+    height: 30px;
+}
 
-.popularSongs h3 {
+h3 {
  margin-left: 10px;
  text-align: left;
 }
@@ -44,54 +51,95 @@ p {
 }
 
 
-a {
-    color: black;
-    text-decoration: none;
-}
-
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 30px;
-    justify-content: center;
-}
-
-.card {
-    flex-grow: 1;
-    flex-basis: 25%;
-    padding: .5em;
-}
-
-
 @media screen and (min-width:768px){
-    #profPic {
-        height: 200px;
-        float:left;
+    Form {
+        margin-right: 500px;
+    }
+
+    iframe{
+        transform: translateX(-250px);
+    }
+
+    form {
+        float: left;
+        width: 300px;
+        margin-bottom: 25px;
+    }
+
+    #noSongs {
+        width:200px;
+    }
+
+    .name{
+        display: inline-block;
+        width:100%;
+        margin-bottom: 50px;
+    }
+    #profPic{
+        width: 40%;
         margin-right: 50px;
         margin-left: 50px;
-        display: block;
+        display:flex;
+        position: relative;
     }
-    .quote-block {
+
+    .quote {
+        width: 50%;
+        height: 200px;
         float: right;
-        width: 300px;
-        margin-right: 50px;
+    }
+    #quote {
+        width:80%;
+        margin-right: 10px;
+        transform: translateX(-5%);  
+
+    }
+    #quoteButton{
+        margin-top: 15px;
+        transform: translateX(-5%);  
     }
     #followButton{
         float: right;
     }
-     .card {
-        flex-basis: 25%;
+    .bio {
+        width:100%;
+        text-align: center;
+        vertical-align: middle;
     }
-    .albumImg {
-        width: 250px;
-        height: 250px;
+    .songSection{
+        width:350px;
     }
-    h4 {
-        font-size: 15pt;
+
+    .albumCard{
+        transform: translateX(450px) translateY(-100px);
+        color:black;
+        position: relative;
     }
+    .albumCard img{
+
+        max-width: 80%;
+        display: inline;
+    }
+    .songItem {
+        height: 35px;
+    }
+    
 }
 
 @media screen and (min-width:992px) {
-
+    #quote {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 30px;
+    }
+    .bio p {
+        font-size: 18px;
+    }
+    .albumCard {
+        max-width: 100%;
+    }
+    .songSection {
+        width: 400px;
+    }
 } 
