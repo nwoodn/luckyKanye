@@ -22,13 +22,17 @@ p {
     background-size: 100%;
     background-repeat: no-repeat;
 }
-iframe{
+.iFrame{
     margin-top: 15px;
     width:150px;
     height: 30px;
 }
 
-h3 {
+.top {
+    margin-top: 15px;
+}
+
+.h3 {
  margin-left: 10px;
  text-align: left;
 }
@@ -56,7 +60,7 @@ h3 {
         margin-right: 500px;
     }
 
-    iframe{
+    .iFrame{
         transform: translateX(-250px);
     }
 
@@ -82,20 +86,21 @@ h3 {
         display:flex;
         position: relative;
     }
-    .quote{
+
+    .quote {
         width: 50%;
-        height: 200px;
+        /*height: 200px;*/
         float: right;
     }
     #quote {
-        width:80%;
+        /*width:80%;*/
         margin-right: 10px;
         transform: translateX(-5%);  
 
     }
     #quoteButton{
         margin-top: 15px;
-        transform: translateX(-5%);  
+        /*transform: translateX(-5%);  */
     }
     #followButton{
         float: right;
@@ -126,11 +131,37 @@ h3 {
 }
 
 @media screen and (min-width:992px) {
+    .name{
+        margin-bottom: 15px;
+    }
+    .quote{
+        float:none;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        /*height: 150px;*/
+    }
     #quote {
         font-size: 20px;
+        width:100%;
+        margin-bottom: 5px;
+    }
+    #quoteButton {
+        margin-top: 10px;
     }
     h4 {
         font-size: 30px;
+    }
+    #profPic {
+        margin-right: 0px;
+    }
+    .iFrame {
+        transform: translateX(-150px);
+    }
+    .bio{
+        float:right;
+        width: 45%;
+        transform: translateY(-280px);
     }
     .bio p {
         font-size: 18px;
@@ -141,4 +172,64 @@ h3 {
     .songSection {
         width: 400px;
     }
-} 
+}
+@media screen and (min-width:2000px){
+    #profPic {
+        margin-left: 150px;
+    }
+    .bio {
+        margin-right: 150px;
+        transform:translatey(-600px);
+    }
+    Form {
+        transform:translateX(1200px) translateY(-400px);
+    }
+
+    .songSection {
+        transform:translateX(600px) translateY(-200px);
+    }
+    .songSection h3 {
+        transform:translateX(500px) translateY(-200px);
+    }
+
+    /*.name {
+        font-size: 90px;
+    }
+    #quote {
+        font-size: 50px;
+        margin-bottom: 5px;
+    }
+    #quoteButton {
+        width: 50rem;
+        font-size: 5rem;
+        color: grey;
+        margin-top: 10px;
+        border: solid lightgrey 3px;
+        margin-bottom: 20px;
+    }
+    .iFrame {
+        transform: translateX(-500px);
+    }
+    .bio{
+        float:right;
+        width: 45%;
+        transform: translateY(-650px) translateX(-100px);
+    }
+    .bio h4 {
+        font-size: 50px;
+    }
+    .bio p {
+        font-size: 30px;
+    }
+    .albumCard img{
+        max-width: 100%;
+    }
+    .songSection p{
+       font-size: 20px;
+    }
+    .songItem {
+        height: 50px;
+    }
+*/
+
+}
