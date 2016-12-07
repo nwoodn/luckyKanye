@@ -28,7 +28,7 @@ ul.nav.navbar-nav {
      max-width: none;
 }
 
-@media (min-width:768px) {
+@media screen and (min-width: 768px) {
 
     .kanyeImg {
         height: 100px;
@@ -36,6 +36,7 @@ ul.nav.navbar-nav {
 
     h1 {
         font-size: 400%;
+        float: none;
     }
 
 }

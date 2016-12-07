@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import eventsJson from './events.json';
-import {Form, FormControl, InputGroup, Button, Glyphicon} from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button, Glyphicon } from 'react-bootstrap';
+// import { Map, Marker, Popup, TileLayer, L } from 'react-leaflet';
+import MapView from './map';
+import L from 'leaflet';
+
+// import L from 'leaflet';
 // import controller from './EventController';
 
 // api key = Pd4kqfGVGCbGnj2f
@@ -41,25 +47,63 @@ class Events extends React.Component {
 
 	//				<SearchEvents totalResults={this.state.totalResults} searchCallBack={this.main}/>
 
+
 	render() {
+		// 	var Livemap = React.createClass({
+		// componentDidMount: function() {
+		//     var map = this.map = L.map(ReactDOM.findDOMNode(this), {
+		//         minZoom: 2,
+		//         maxZoom: 20,
+		//         layers: [
+		//             L.tileLayer(
+		//                 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+		//                 {attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'})
+		//         ],
+		//         attributionControl: false,
+		//     });
+
+		//     map.on('click', this.onMapClick);
+		//     map.fitWorld();
+		// // },
+		// // componentWillUnmount: function() {
+		// //     this.map.off('click', this.onMapClick);
+		// //     this.map = null;
+		// // },
+		// // onMapClick: function() {
+		// //     // Do some wonderful map things...
+		// },
+		// render: function() {
+		//     return (
+		//         <div className='map'></div>
+		//     );
+		// }
+		//});
+
+
+
 		return (
 			<div className="Events">
 				<div className="Event-header">
 					<h2>Events</h2>
+	<MyMap/>
 				</div>
 				<main>
-
 					<EventTable events={this.state.events} />
+
 				</main>
 			</div>
 		);
 	}
 }
-
+// ReactDOM.render(
+// 	<MapView />,
+// 	document.getElementById("mapid")
+// )
 class EventTable extends React.Component {
 	render() {
+
 		var rows = this.props.events.map(function (eventObj) {
-			return <EventRow event={eventObj}/>;
+			return <EventRow event={eventObj} />;
 		});
 
 		return (
@@ -136,7 +180,7 @@ class EventRow extends React.Component {
 // 			<Form inline>
 // 				<InputGroup>
 // 					<InputGroup.Button>
-// 						<Button onClick={this.handleClick}>
+// 						<Button onClick={this.handleClick} className="eventSearch">
 // 							<Glyphicon glyph="search" aria-label="Search" />
 // 						</Button>
 // 					</InputGroup.Button>
@@ -148,5 +192,48 @@ class EventRow extends React.Component {
 // 	}
 // }
 
+// class Map extends React.Component {
+
+
+// 	// 			// id: 'sarahf95.2a1n7d6j',
+// 	// accessToken: 'pk.eyJ1Ijoic2FyYWhmOTUiLCJhIjoiY2l3YndsZTB5MDRvOTJ0bGtvazZvdGZsYiJ9.gBaTfDLpBwuLDxMfsBBxjw'
+// 	//	}).addTo(mymap);
+// 	const position = [51.505, -0.09];
+// 	const map = (
+// 		<Map center={position} zoom={13}>
+// 			<TileLayer url='https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}'
+// 				attribution='Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' />
+// 		</Map>
+// 	);
+// 	render(map, document.getElementById('mapid'));
+// }
+
+class MyMap extends Component {
+ constructor() {
+   super();
+   this.state ={
+     map: null,
+   };
+ }
+
+ componentDidMount() {
+   setTimeout(() => {
+     var map = L.map('map', {
+         minZoom: 2,
+         maxZoom: 20,
+         layers: [L.tileLayer("https://api.mapbox.com/styles/v1/sarahf95/ciwe83x0y001u2qqowgkeych8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2FyYWhmOTUiLCJhIjoiY2l3YndsZTB5MDRvOTJ0bGtvazZvdGZsYiJ9.gBaTfDLpBwuLDxMfsBBxjw", {attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'})],
+         attributionControl: false,
+     });
+     map.fitWorld();
+     return this.setState({
+         map: map
+     });
+   }, 100)
+ }
+
+ render() {
+   return <div id="map" style={{ height: 300 }}></div>;
+ }
+}
 
 export default Events;
