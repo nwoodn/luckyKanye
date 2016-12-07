@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import eventsJson from './events.json';
-import { Form, FormControl, InputGroup, Button, Glyphicon } from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button, Glyphicon, Grid, Row, Col } from 'react-bootstrap';
 import L from 'leaflet';
+import './Events.css';
 
 
 var SAMPLE_EVENTS = [
@@ -21,13 +22,21 @@ class Events extends React.Component {
 
 		return (
 			<div className="Events">
+
 				<div className="Event-header">
 					<h2 className="block-font">Events</h2>
-					<MyMap marker={this.state.events} />
+
+
 				</div>
-				<main>
-					<EventTable events={this.state.events} />
-				</main>
+				<div>
+					<main>
+						<MyMap marker={this.state.events} />
+						<div id="eventTable">
+							<EventTable events={this.state.events} />
+						</div>
+					</main>
+				</div>
+
 			</div>
 		);
 	}
@@ -61,9 +70,9 @@ class EventRow extends React.Component {
 		var event = this.props.event; //shortcut
 		return (
 			<div onClick={this.handleClick}>
-				<p><span id='city'>{event.city}  </span>||
-        {event.venue}||
-        {event.date}</p>
+				<p><span id='city'> {event.city} </span> <i className="fa fa-globe" aria-hidden="true"></i>
+					{event.venue}︎︎  <i className="fa fa-calendar-o" aria-hidden="true"></i>
+					{event.date}</p>
 			</div>
 		);
 	}
@@ -96,7 +105,7 @@ class MyMap extends Component {
 
 			var markerArray = this.props.marker;
 			markerArray.forEach(function (marker) {
-				L.marker([marker.lat, marker.long], {icon: kanyeIcon}).addTo(map).bindPopup("VENUE: " + marker.venue + ", " + marker.date);
+				L.marker([marker.lat, marker.long], { icon: kanyeIcon }).addTo(map).bindPopup("VENUE: " + marker.venue + ", " + marker.date);
 			});
 
 			return this.setState({
