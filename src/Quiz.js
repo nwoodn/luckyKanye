@@ -2,13 +2,16 @@ import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
 import quizJSON from './quiz.json';
 import './Quiz.css';
+import kanyePic from './kanye-lmao.jpg'; 
+import thumbsUp from './thumbs-up.jpg'; 
+import kanyay from './kanyay.jpg'; 
 
 class Quiz extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            quiz: {},
+            quiz: quizJSON,
             user_answers: [],
             step: null
         }
@@ -20,22 +23,22 @@ class Quiz extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentDidMount() {
-        this.setState({ quiz: quizJSON });
+    componentWillMount() {
+        this.setState({ step: 0 });
     }
 
     nextStep() {
         this.setState({ step: (this.state.step + 1) });
     }
 
-    setAnswer(event) {
+    setAnswer(index) {
         this.state.user_answers[this.state.step] = this.state.user_answers[this.state.step] || [];
-        this.state.user_answers[this.state.step][parseInt(event.target.value)] = event.target.checked;
+        this.state.user_answers[this.state.step][parseInt(index)] = true;
     }
 
     isAnswerRight(index) {
         var result = true;
-        Object.keys(this.state.quiz.questions[index].answers).map((value, answer_index) => {
+        Object.keys(this.state.quiz.questions[index].answers).map((value) => {
             var answer = this.state.quiz.questions[index].answers[value]
             if (!this.state.user_answers[index] || (answer.is_right !== (this.state.user_answers[index][value] || false))) {
                 result = false;
@@ -50,15 +53,26 @@ class Quiz extends React.Component {
         Object.keys(this.state.quiz.questions).map((value, index) => {
             total++;
             if (this.isAnswerRight(index)) {
-                score = score + 1;
+                score++;
+
             }
         });
         var finalPercent = (score / total * 100);
-        if (finalPercent >= 60) {
-            return <div className="score">You agree with {finalPercent}% of Kanye's opinions<br />You would enjoy having Kanye as President!</div>
+        if (finalPercent === 100) {
+            return <div>
+                       <div className="score">You agree with {finalPercent}% of Kanye's opinions<br />You would enjoy having Kanye as a President!</div>
+                       <img src={kanyay} alt="Kanyay!" className="kanyay" />
+                   </div>
+        } else if (finalPercent >= 60) {
+            return <div>
+                       <div className="score">You agree with {finalPercent}% of Kanye's opinions<br />You would enjoy having Kanye as President!</div>
+                       <img src={thumbsUp} alt="Happy Kanye" className="kanye-happy" />
+                   </div>;
         } else {
-            return <div className="score">You agree with {finalPercent}% of Kanye's opinions</div>;
-
+            return <div>
+                       <div className="score">You agree with {finalPercent}% of Kanye's opinions</div>
+                       <img src={kanyePic} alt="Kanye West" className="kanye-lmao" />
+                   </div>;
         }
     }
 
@@ -72,13 +86,6 @@ class Quiz extends React.Component {
 
 
     render() {
-        if (this.state.step === null) {
-            return <div>
-                <h2>{this.state.quiz.title}</h2>
-                <h3>Take this quiz to find out!</h3>
-                <button className="btn btn-primary" id="start" type="button" onClick={this.handleClick}>Start</button>
-            </div>
-        }
         var now = this.state.step * 10;
         return (
             <div className="quiz">
@@ -107,6 +114,22 @@ class Quiz extends React.Component {
 
 class Question extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedOption: "",
+            selectedNum: undefined
+        }
+        this.handleOptionChange = this.handleOptionChange.bind(this);
+    }
+
+    handleOptionChange(event) {
+        this.setState({
+            selectedOption: event.target.value,
+            selectedNum: (event.target.id.substring(event.target.id.length - 1))
+        });
+    }
+
     render() {
         var answersNodes = Object.keys(this.props.data.answers).map((value, index) => {
             return (
@@ -115,9 +138,9 @@ class Question extends React.Component {
                         <input
                             id={"answer-input-" + index}
                             type="radio"
-                            value={value}
-                            onChange={this.props.setAnswer}
-                            defaultChecked={false}
+                            value={this.props.data.answers[index].value}
+                            onChange={this.handleOptionChange}
+                            checked={this.state.selectedOption === this.props.data.answers[index].value}
                             name="answer" />
                         {' '}
                         <label htmlFor={"answer-input-" + index}>
@@ -134,7 +157,7 @@ class Question extends React.Component {
                 <form>
                     {answersNodes}
                     <br />
-                    <button className="btn btn-primary" type="button" id="next" onClick={this.props.validateAnswers}>
+                    <button className="btn btn-primary" type="button" id="next" onClick={() => { this.props.setAnswer(this.state.selectedNum); this.props.validateAnswers() } }>
                         Next
                     </button>
                 </form>

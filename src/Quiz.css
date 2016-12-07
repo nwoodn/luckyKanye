@@ -2,6 +2,11 @@
     margin: 50px;
 }
 
+.quiz-title {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
 h3 {
     margin: 20px;
     font-size: 150%;
@@ -24,11 +29,41 @@ label {
 
 .radio {
     text-align: left; 
+    margin-left: 30%;
+}
+
+.kanye-lmao, .kanye-happy {
+    margin-bottom: 20px; 
+}
+
+.kanye-lmao {
+    max-width: 100%; 
+}
+
+.kanye-happy {
+    max-width: 90%; 
+}
+
+.kanyay {
+    max-width: 80%; 
 }
 
 @media screen and (min-width: 768px) {
     .answer-choices {
         width: 50%; 
     }
+    
+    .kanye-happy, .kanyay {
+        max-width: 60%; 
+    }
 }
 
+@media screen and (min-width: 992px) {
+    .answer-choices {
+        width: 40%; 
+    }
+
+    .kanye-happy, .kanyay {
+        max-width: 55%
+    }
+}

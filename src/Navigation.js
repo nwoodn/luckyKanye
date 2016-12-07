@@ -14,7 +14,7 @@ class Navigation extends React.Component {
 				<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet" />
 				<div id="container">
 					<img className="kanyeImg" src="https://www.hastac.org/sites/default/files/upload/images/post/kanye-chain.jpg" alt="Kanye West" />
-					<h1>Yeezy 4 President</h1>
+					<h1 className="block-font">Yeezy 4 President</h1>
 				</div>
 				<Navbar inverse collapseOnSelect>
 					<Navbar.Header>
@@ -27,7 +27,7 @@ class Navigation extends React.Component {
 						<Nav>
 							<LinkContainer to="/about"><NavItem>About</NavItem></LinkContainer>
 							<LinkContainer to="/events"><NavItem>Events</NavItem></LinkContainer>
-							<LinkContainer to="/quiz"><NavItem>Political Stances</NavItem></LinkContainer>
+							<LinkContainer to="/positions"><NavItem>Political Stances</NavItem></LinkContainer>
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>

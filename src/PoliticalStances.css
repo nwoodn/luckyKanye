@@ -1,0 +1,81 @@
+h5 {
+    margin: 20px;
+    font-size: 140%;
+}
+
+.position-div {
+    margin: 30px;
+}
+
+.stance-card p {
+    text-align: left;
+}
+
+.positions-header {
+    font-size: 300%;
+}
+
+.stance-list {
+    margin-top: 50px;
+}
+
+.stance-title {
+    font-size: 150%;
+}
+
+.stance-description {
+    font-size: 120%;
+}
+
+.stance-card {
+    border: solid 1px grey; 
+    padding-right: 0;
+    padding-left: 0; 
+    margin-right: 5px;
+    margin-left: 5px; 
+    margin-bottom: 10px; 
+}
+
+.show-cards {
+    margin-left: 10px;
+    margin-right: 10px; 
+}
+
+.photo {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px; 
+    background-position: center; 
+}
+
+#Racism {
+    background-image: url("protest.jpg"); 
+}
+
+#LGBTQ-Rights {
+    background-image: url("lgbtq.jpg"); 
+}
+
+#Education {
+    background-image: url("education.jpg"); 
+}
+
+#Prison-Reform {
+    background-image: url("prison-reform.jpg"); 
+}
+
+@media screen and (min-width: 992px) {
+    .show-cards {
+        margin-left: 12%;
+    }
+
+    .stance-card {
+        min-height: 396px; 
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .stance-card{
+        min-height: 352px; 
+    }
+}

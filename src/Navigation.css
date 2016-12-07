@@ -1,6 +1,7 @@
 .navbar {
     font-size: 120%;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
+    border-radius: 0;
 }
 
 .kanyeImg {
@@ -13,7 +14,6 @@
 }
 
 h1, h2 {
-    font-family: 'Bungee', cursive;
     display: inline;
     vertical-align: middle;
     font-size: 170%;

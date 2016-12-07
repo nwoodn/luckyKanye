@@ -4,16 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-.Events  {
-  background-image: url('../public/KanyeConcert.jpg');
-  background-position: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-}
-
-table {
-  width: 100%;
-  height: 1000px;
+.block-font {
+  font-family: 'Bungee', cursive;
 }

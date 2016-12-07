@@ -64,7 +64,8 @@ p {
         transform: translateX(-250px);
     }
 
-    form {
+    .form {
+        margin-right: 500px;
         float: left;
         width: 300px;
         margin-bottom: 25px;
@@ -93,7 +94,6 @@ p {
         float: right;
     }
     #quote {
-        /*width:80%;*/
         margin-right: 10px;
         transform: translateX(-5%);  
 
@@ -191,45 +191,5 @@ p {
     .songSection h3 {
         transform:translateX(500px) translateY(-200px);
     }
-
-    /*.name {
-        font-size: 90px;
-    }
-    #quote {
-        font-size: 50px;
-        margin-bottom: 5px;
-    }
-    #quoteButton {
-        width: 50rem;
-        font-size: 5rem;
-        color: grey;
-        margin-top: 10px;
-        border: solid lightgrey 3px;
-        margin-bottom: 20px;
-    }
-    .iFrame {
-        transform: translateX(-500px);
-    }
-    .bio{
-        float:right;
-        width: 45%;
-        transform: translateY(-650px) translateX(-100px);
-    }
-    .bio h4 {
-        font-size: 50px;
-    }
-    .bio p {
-        font-size: 30px;
-    }
-    .albumCard img{
-        max-width: 100%;
-    }
-    .songSection p{
-       font-size: 20px;
-    }
-    .songItem {
-        height: 50px;
-    }
-*/
 
 }
