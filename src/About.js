@@ -308,7 +308,7 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <Form inline>
+      <Form inline className="form">
         <InputGroup>
           <FormControl type="text" placeholder="Search for a song..." onChange={this.handleChange} />
           <InputGroup.Button>

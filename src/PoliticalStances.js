@@ -48,7 +48,7 @@ class StancesList extends React.Component {
         });
 
         return (
-            <Row className="show-grid">
+            <Row className="show-cards">
                 {stancesItemArray}
             </Row>
         );
