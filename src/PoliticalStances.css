@@ -36,7 +36,7 @@ h5 {
     margin-bottom: 10px; 
 }
 
-.show-grid {
+.show-cards {
     margin-left: 10px;
     margin-right: 10px; 
 }
@@ -65,7 +65,7 @@ h5 {
 }
 
 @media screen and (min-width: 992px) {
-    .show-grid {
+    .show-cards {
         margin-left: 12%;
     }
 
