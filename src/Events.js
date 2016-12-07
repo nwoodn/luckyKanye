@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import eventsJson from './events.json';
 import { Form, FormControl, InputGroup, Button, Glyphicon } from 'react-bootstrap';
-// import { Map, Marker, Popup, TileLayer, L } from 'react-leaflet';
-import MapView from './map';
-import L from 'leaflet';
+// import { Map, Marker, Popup, TileLayer} from 'react-leaflet';
 
-// import L from 'leaflet';
+
+import L from 'leaflet';
 // import controller from './EventController';
 
 // api key = Pd4kqfGVGCbGnj2f
@@ -29,81 +28,13 @@ class Events extends React.Component {
 		// this.fetchData = this.fetchData.bind(this);
 	}
 
-	// fetchData(searchTerm) {
-	//   var thisComponent = this;
-	// 	// controller.search(searchTerm)
-	// 	.then(function(data) {
-	// 		thisComponent.setState({
-	// 			event:data.results,
-	// 			totalResults:data.total_results
-	// 		})
-	// 	});
-	// }
-
-
-	// componentDidMount() {
-	//     this.setState({ event: eventsJson['concerts'] });
-	// }
-
-	//				<SearchEvents totalResults={this.state.totalResults} searchCallBack={this.main}/>
-
-  // fetchData(SAMPLE_Events) {
-  //   var thisComponent = this;
-
-  // }
-  render() {
-    return (
-      <div className="Events">
-        <div className="Event-header">
-          <h2>"Campaign" Events</h2>
-        </div>
-        <main>
-          <EventTable events={this.state.events} />
-        </main>
-      </div>
-    );
-  }
-
-
-
 	render() {
-		// 	var Livemap = React.createClass({
-		// componentDidMount: function() {
-		//     var map = this.map = L.map(ReactDOM.findDOMNode(this), {
-		//         minZoom: 2,
-		//         maxZoom: 20,
-		//         layers: [
-		//             L.tileLayer(
-		//                 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-		//                 {attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'})
-		//         ],
-		//         attributionControl: false,
-		//     });
-
-		//     map.on('click', this.onMapClick);
-		//     map.fitWorld();
-		// // },
-		// // componentWillUnmount: function() {
-		// //     this.map.off('click', this.onMapClick);
-		// //     this.map = null;
-		// // },
-		// // onMapClick: function() {
-		// //     // Do some wonderful map things...
-		// },
-		// render: function() {
-		//     return (
-		//         <div className='map'></div>
-		//     );
-		// }
-		//});
-
-
 
 		return (
 			<div className="Events">
 				<div className="Event-header">
 					<h2>Events</h2>
-	<MyMap/>
+					<MyMap marker={this.state.events}/>
 				</div>
 				<main>
 					<EventTable events={this.state.events} />
@@ -113,10 +44,7 @@ class Events extends React.Component {
 		);
 	}
 }
-// ReactDOM.render(
-// 	<MapView />,
-// 	document.getElementById("mapid")
-// )
+
 class EventTable extends React.Component {
 	render() {
 
@@ -227,31 +155,69 @@ class EventRow extends React.Component {
 // }
 
 class MyMap extends Component {
- constructor() {
-   super();
-   this.state ={
-     map: null,
-   };
- }
+	constructor() {
+		super();
+		this.state = {
+			map: null
+		};
+	}
 
- componentDidMount() {
-   setTimeout(() => {
-     var map = L.map('map', {
-         minZoom: 2,
-         maxZoom: 20,
-         layers: [L.tileLayer("https://api.mapbox.com/styles/v1/sarahf95/ciwe83x0y001u2qqowgkeych8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2FyYWhmOTUiLCJhIjoiY2l3YndsZTB5MDRvOTJ0bGtvazZvdGZsYiJ9.gBaTfDLpBwuLDxMfsBBxjw", {attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'})],
-         attributionControl: false,
-     });
-     map.fitWorld();
-     return this.setState({
-         map: map
-     });
-   }, 100)
- }
+	componentDidMount() {
+		setTimeout(() => {
+			var map = L.map('map', {
+				minZoom: 2,
+				maxZoom: 20,
+				layers: [L.tileLayer("https://api.mapbox.com/styles/v1/sarahf95/ciwe83x0y001u2qqowgkeych8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2FyYWhmOTUiLCJhIjoiY2l3YndsZTB5MDRvOTJ0bGtvazZvdGZsYiJ9.gBaTfDLpBwuLDxMfsBBxjw", { attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>' })],
+				attributionControl: false,
+			});
+			map.fitWorld();
+			// var marker = this.props.events.map(function (markerObj) {
 
- render() {
-   return <div id="map" style={{ height: 300 }}></div>;
- }
+			// 	return <Markers markers={markerObj} />;
+			var markerArray = this.props.marker;
+			markerArray.forEach(function(marker){
+				L.marker([marker.lat, marker.long]).addTo(map);
+			});
+			//var marker = 
+			// });
+			return this.setState({
+				map: map
+			});
+		}, 100)
+	}
+
+	render() {
+
+		return <div id="map" style={{ height: 500 }}>
+	
+		</div>;
+	}
 }
+
+// class Markers extends React.Component {
+// 	render() {
+// 		console.log(this);
+
+// 		return (
+// 			L.marker([event['lat'], event['long']]).addTo(map)
+// 		);
+// 	}
+//}
+
+// class Marker extends React.Component {
+// 	constructor(props) {
+// 		super(props);
+
+// 	}
+
+// 	render() {
+// 		var MyMap = this.state.map;
+// 		var event = this.props.event; //shortcut
+// 		var marker = L.marker([event.lat, event.long]).addTo(MyMap);
+// 		return (
+// 			{ marker }
+// 		);
+// 	}
+// }
 
 export default Events;
