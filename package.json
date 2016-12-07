@@ -1,6 +1,7 @@
 {
   "name": "luckyKanye",
   "version": "0.1.0",
+"homepage": "https://nwoodn.github.io/luckyKanye/build/",
   "private": true,
   "devDependencies": {
     "css-loader": "^0.26.1",
