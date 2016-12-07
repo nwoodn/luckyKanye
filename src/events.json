@@ -3,102 +3,443 @@
         {
             "date": "AUGUST 25",
             "city": "INDIANAPOLIS",
-            "venue": "BANKERS LIFE FIELDHOUSE"
+            "venue": "BANKERS LIFE FIELDHOUSE",
+            "lat": 39.764057,
+            "long": -86.155493
         },
         {
             "date": "AUGUST 27",
             "city": "BUFFALO",
-            "venue": "FIRST NIAGARA"
+            "venue": "KEY BANK CENTER",
+            "lat":42.8750001,
+            "long": -78.876576
         },
         {
             "date": "AUGUST 30",
             "city": "TORONTO",
-            "venue": "AIR CANADA"
+            "venue": "AIR CANADA",
+            "lat": 43.6434661,
+            "long": -79.37909890000003
         },
         {
             "date": "AUGUST 31",
             "city": "TORONTO",
-            "venue": "AIR CANADA"
+            "venue": "AIR CANADA",
+            "lat": 43.6434661,
+            "long": -79.37909890000003
         },
         {
             "date": "SEPTEMBER 2",
             "city": "MONTREAL",
-            "venue": "BELL CENTRE"
+            "venue": "BELL CENTRE", 
+            "lat": 45.4960039,
+            "long": -73.569238
         },
         {
             "date": "SEPTEMBER 3",
             "city": "BOSTON",
-            "venue": "TD GARDEN"
+            "venue": "TD GARDEN",
+            "lat": 42.366198,
+            "long": -71.062146
         },
         {
             "date": "SEPTEMBER 5",
             "city": "NEW YORK",
-            "venue": "MADISON SQUARE GARDEN"
+            "venue": "MADISON SQUARE GARDEN",
+            "lat": 38.659847,
+            "long": -121.330931
         },
         {
             "date": "SEPTEMBER 6",
             "city": "NEW YORK",
-            "venue": "MADISON SQUARE GARDEN"
+            "venue": "MADISON SQUARE GARDEN",
+            "lat": 38.659847,
+            "long": -121.330931
         },
         {
             "date": "SEPTEMBER 8",
             "city": "WASHINGTON",
-            "venue": "VERIZONCENTER"
+            "venue": "VERIZON CENTER",
+            "lat": 38.8981209,
+            "long": -77.021103
         },
         {
             "date": "SEPTEMBER 12",
             "city": "ATLANTA",
-            "venue": "PHILIPS ARENA"
+            "venue": "PHILIPS ARENA",
+            "lat": 33.7572891,
+            "long": -84.396324
         },
         {
             "date": "SEPTEMBER 14",
             "city": "TAMPA",
-            "venue": "AMALIE ARENA"
+            "venue": "AMALIE ARENA",
+            "lat": 27.94986,
+            "long": -82.445634
         },
         {
             "date": "SEPTEMBER 16",
             "city": "MIAMI",
-            "venue": "AMERICAN AIRLINES ARENA"
+            "venue": "AMERICAN AIRLINES ARENA",
+            "lat": 25.7814014,
+            "long": -80.186969
         },
         {
             "date": "SEPTEMBER 17",
             "city": "MIAMI",
-            "venue": "AMERICAN AIRLINES ARENA"
+            "venue": "AMERICAN AIRLINES ARENA",
+            "lat": 25.7814014,
+            "long": -80.186969
         },
         {
             "date": "SEPTEMBER 20",
             "city": "HOUSTON",
-            "venue": "TOYOTA CENTER"
+            "venue": "TOYOTA CENTER",
+            "lat": 29.7507604,
+            "long": -95.3621
         },
         {
             "date": "SEPTEMBER 21",
             "city": "AUSTIN",
-            "venue": "FRANK ERWIN CENTER"
+            "venue": "FRANK ERWIN CENTER",
+            "lat": 30.2769241,
+            "long": -97.732171
         },
         {
             "date": "SEPTEMBER 22",
             "city": "DALLAS",
-            "venue": "AMERICANAIRLINESCENTER"
+            "venue": "AMERICAN AIRLINES CENTER",
+            "lat": 32.7902058,
+            "long": -96.810529
         },
         {
             "date": "SEPTEMBER 24",
             "city": "NASHVILLE",
-            "venue": "BRIDGESTONEARENA"
+            "venue": "BRIDGESTONE ARENA",
+            "lat": 36.1565833,
+            "long": -86.787453
+        },
+{
+            "date": "SEPTEMBER 25",
+            "city": "COLUMBUS",
+            "venue": "SCHOTTENSTEIN",
+            "lat": 40.0075919,
+            "long": -83.0251
+        },
+        {
+            "date": "SEPTEMBER 27",
+            "city": "GRAND RAPIDS",
+            "venue": "VAN ANDEL ARENA",
+            "lat": 42.9655028,
+            "long": -85.672949
+        },
+        {
+            "date": "SEPTEMBER 28",
+            "city": "DETROIT",
+            "venue": "JOE LOUIS ARENA",
+            "lat": 42.3251899,
+            "long": -83.051362
+        },
+        {
+            "date": "SEPTEMBER 30",
+            "city": "UNIVERSITY PARK",
+            "venue": "BRYCE JORDAN CENTER",
+            "lat": 40.8086634,
+            "long": -77.855589
+        },
+        {
+            "date": "OCTOBER 1",
+            "city": "CLEVELAND",
+            "venue": "QUICKEN LOANS",
+            "lat": 41.4966329,
+            "long": -81.688209
+        },
+        {
+            "date": "OCTOBER 2",
+            "city": "NEW YORK",
+            "venue": "THE MEADOWS MUSIC FESTIVAL",
+            "lat": 40.742805,
+            "long": -73.844847
+        },
+        {
+            "date": "OCTOBER 7",
+            "city": "CHICAGO",
+            "venue": "UNITED CENTER",
+            "lat": 41.880655,
+            "long": -87.674153
+        },
+        {
+            "date": "OCTOBER8",
+            "city": "CHICAGO",
+            "venue": "ALL STATE ARENA",
+            "lat": 42.005259,
+            "long": -87.88783
+        },
+        {
+            "date": "OCTOBER 10",
+            "city": "MINNEAPOLIS",
+            "venue": "XCEL ENERGY CENTER",
+            "lat": 44.944895,
+            "long": -93.10107
+        },
+        {
+            "date": "OCTOBER 12",
+            "city": "WINNIPEG",
+            "venue": "MTS CENTRE",
+            "lat": 49.8926174,
+            "long": -97.1437393
+        },
+        {
+            "date": "OCTOBER 15",
+            "city": "EDMONTON",
+            "venue": "ROGER'S PLACE",
+            "lat": 53.5462218,
+            "long": -113.496139
+        },
+        {
+            "date": "OCTOBER 17",
+            "city": "VANCOUVER",
+            "venue": "ROGERS ARENA",
+            "lat": 49.277836,
+            "long": -123.108823
+        },
+        {
+            "date": "OCTOBER 19",
+            "city": "SEATTLE",
+            "venue": "KEY ARENA",
+            "lat": 47.6221,
+            "long": -122.353988
+        },
+        {
+            "date": "OCTOBER 22",
+            "city": "OAKLAND",
+            "venue": "ORACLE ARENA",
+            "lat": 37.750292,
+            "long": -122.203049
+        },
+        {
+            "date": "OCTOBER 23",
+            "city": "OAKLAND",
+            "venue": "ORACLE ARENA",
+            "lat": 37.750292,
+            "long": -122.203049
+        },
+        {
+            "date": "OCTOBER 25",
+            "city": "LOS ANGELES",
+            "venue": "FORUM",
+            "lat": 33.9450493,
+            "long": -118.3705443
+        },
+        {
+            "date": "OCTOBER 26",
+            "city": "LOS ANGELES",
+            "venue": "FORUM",
+            "lat": 33.9450493,
+            "long": -118.3705443
+        },
+        {
+            "date": "OCTOBER 27",
+            "city": "LOS ANGELES",
+            "venue": "FORUM",
+            "lat": 33.9450493,
+            "long": -118.3705443        
+        },
+        {
+            "date": "OCTOBER 29",
+            "city": "LAS VEGAS",
+            "venue": "T-MOBILE ARENA",
+            "lat": 36.102709,
+            "long": -115.17818
+        },
+        {
+            "date": "NOVEMBER 1",
+            "city": "LOS ANGELES",
+            "venue": "FORUM",
+            "lat": 33.9450493,
+            "long": -118.3705443  
+        },
+        {
+            "date": "NOVEMBER 2",
+            "city": "LOS ANGELES",
+            "venue": "FORUM",
+            "lat": 33.9450493,
+            "long": -118.3705443  
+        },
+        {
+            "date": "NOVEMBER 3",
+            "city": "LOS ANGELES",
+            "venue": "FORUM",
+            "lat": 33.9450493,
+            "long": -118.3705443  
+        },
+        {
+            "date": "NOVEMBER 17",
+            "city": "SAN JOSE",
+            "venue": "SAP CENTER",
+            "lat": 37.332585,
+            "long": -121.901057
+        },
+        {
+            "date": "NOVEMBER 19",
+            "city": "SACRAMENTO",
+            "venue": "GOLDEN 1 CENTER",
+            "lat": 38.5809069,
+            "long": -121.499761
+        },
+        {
+            "date": "NOVEMBER 20",
+            "city": "LOS ANGELES",
+            "venue": "FORUM",
+            "lat": 33.9450493,
+            "long": -118.3705443 
+        },
+        {
+            "date": "NOVEMBER 22",
+            "city": "FRESNO",
+            "venue": "SAVE MART CENTER",
+            "lat": 36.809691,
+            "long": -119.738501
+        },
+        {
+            "date": "NOVEMBER 23",
+            "city": "ANAHEIM",
+            "venue": "HONDA CENTER",
+            "lat": 33.8078476,
+            "long": -117.876469
+        },
+        {
+            "date": "NOVEMBER 26",
+            "city": "DALLAS",
+            "venue": "AMERICAN AIRLINES CENTER",
+            "lat": 32.7902058,
+            "long": -96.810529
+        },
+        {
+            "date": "NOVEMBER 28",
+            "city": "DENVER",
+            "venue": "PEPSI CENTER",
+            "lat": 39.74866,
+            "long": -105.00771
+        },
+        {
+            "date": "DECEMBER 1",
+            "city": "SAN ANTONIO",
+            "venue": "AT&T CENTER",
+            "lat": 29.4330386,
+            "long": -98.433799
+        },
+        {
+            "date": "DECEMBER 2",
+            "city": "HOUSTON",
+            "venue": "TOYOTA CENTER",
+            "lat": 29.7507604,
+            "long": -95.3621005
+        },
+        {
+            "date": "DECEMBER 4",
+            "city": "FT LAUDERDALE",
+            "venue": "BB&T",
+            "lat": 26.158469,
+            "long": -80.3255512
+        },
+        {
+            "date": "DECEMBER 6",
+            "city": "ORLANDO",
+            "venue": "AMWAY CENTER",
+            "lat": 28.5392562,
+            "long": -81.3838599
+        },
+        {
+            "date": "DECEMBER 8",
+            "city": "ATLANTA",
+            "venue": "PHILIPS ARENA",
+            "lat": 33.7572891,
+            "long": -84.396324
+        },
+        {
+            "date": "DECEMBER 9",
+            "city": "COLUMBIA",
+            "venue": "COLONIAL LIFE ARENA",
+            "lat": 33.9945666,
+            "long": -81.036705
+        },
+        {
+            "date": "DECEMBER 11",
+            "city": "ALBANY",
+            "venue": "TIMES UNION CENTER",
+            "lat": 42.6486671,
+            "long": -73.755216
+        },
+        {
+            "date": "DECEMBER 13",
+            "city": "PHILADELPHIA",
+            "venue": "WELLS FARGO CENTER",
+            "lat": 39.901202,
+            "long": -75.17198
+        },
+        {
+            "date": "DECEMBER 15",
+            "city": "PHILADELPHIA",
+            "venue": "WELLS FARGO CENTER",
+            "lat": 39.901202,
+            "long": -75.17198
+        },
+        {
+            "date": "DECEMBER 16",
+            "city": "NEWARK",
+            "venue": "PRUDENTIAL CENTER",
+            "lat": 40.7336167,
+            "long": -74.17115
+        },
+        {
+            "date": "DECEMBER 18",
+            "city": "TORONTO",
+            "venue": "AIR CANADA CENTRE",
+            "lat": 43.6441669,
+            "long": -79.3782
+        },
+        {
+            "date": "DECEMBER 20",
+            "city": "LOUISVILLE",
+            "venue": "KFC YUM! CENTER",
+            "lat": 38.2572547,
+            "long": -85.754082
+        },
+        {
+            "date": "DECEMBER 22",
+            "city": "DETROIT",
+            "venue": "PALACE AT AUBURN HILLS",
+            "lat": 42.6971287,
+            "long": -83.245517
+        },
+        {
+            "date": "DECEMBER 27",
+            "city": "WASHINGTON",
+            "venue": "VERIZON CENTER",
+            "lat": 38.8981209,
+            "long": -77.021103
         },
         {
             "date": "DECEMBER 28",
             "city": "BOSTON",
-            "venue": "TD GARDEN"
+            "venue": "TD GARDEN",
+            "lat": 42.366198,
+            "long": -71.062146
         },
         {
             "date": "DECEMBER 30",
             "city": "BROOKLYN",
-            "venue": "BARCLAYS CENTER"
+            "venue": "BARCLAYS CENTER",
+            "lat": 40.6834617,
+            "long": -73.976582
         },
         {
             "date": "DECEMBER 31",
             "city": "BROOKLYN",
-            "venue": "BARCLAYS CENTER"
+            "venue": "BARCLAYS CENTER",
+            "lat": 40.6834617,
+            "long": -73.976582
         }
     ]
 }

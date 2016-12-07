@@ -87,6 +87,10 @@ a:hover {
     text-decoration: none;
 }
 
+/*.news-article {
+    border: 1px solid lightgray; 
+}*/
+
 @media screen and (min-width: 768px) {
 
     .mainContent {

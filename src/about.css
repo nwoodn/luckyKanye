@@ -63,15 +63,16 @@ a {
     padding: .5em;
 }
 
+
 @media screen and (min-width:768px){
-    #profPic{
+    #profPic {
         height: 200px;
         float:left;
         margin-right: 50px;
         margin-left: 50px;
         display: block;
     }
-    #quote {
+    .quote-block {
         float: right;
         width: 300px;
         margin-right: 50px;

@@ -32,3 +32,10 @@ label {
     }
 }
 
+@media screen and (min-width: 992px) {
+    .answer-choices {
+        width: 40%; 
+    }
+}
+
+

@@ -75,10 +75,11 @@ class Quiz extends React.Component {
     render() {
         if (this.state.step === null) {
             return <div>
-                <h2>{this.state.quiz.title}</h2>
-                <h3>Take this quiz to find out!</h3>
-                <button className="btn btn-primary" id="start" type="button" onClick={this.handleClick}>Start</button>
-            </div>
+                       <PoliticalStances />
+                       <h2>{this.state.quiz.title}</h2>
+                       <h3>Take this quiz to find out!</h3>
+                       <button className="btn btn-primary" id="start" type="button" onClick={this.handleClick}>Start</button>
+                   </div>
         }
         var now = this.state.step * 10;
         return (
@@ -124,8 +125,6 @@ class Question extends React.Component {
         });
     }
 
-    
-
     render() {
         var answersNodes = Object.keys(this.props.data.answers).map((value, index) => {
             return (
@@ -159,6 +158,16 @@ class Question extends React.Component {
                 </form>
             </div>
         );
+    }
+}
+
+class PoliticalStances extends React.Component {
+    render() {
+        return (
+            <div className="political-stances">
+                <h3>"I Don't Have Views on Politics, Just on Humanity" - Kanye</h3>
+            </div>
+        )
     }
 }
 

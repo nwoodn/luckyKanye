@@ -25,7 +25,7 @@ class Events extends React.Component {
     return (
       <div className="Events">
         <div className="Event-header">
-          <h2>Events</h2>
+          <h2>"Campaign" Events</h2>
         </div>
         <main>
           <EventTable events={this.state.events} />
