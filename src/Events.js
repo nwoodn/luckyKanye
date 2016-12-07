@@ -24,9 +24,7 @@ class Events extends React.Component {
 			<div className="Events">
 
 				<div className="Event-header">
-					<h2 className="block-font">Events</h2>
-
-
+					<h2 className="block-font">Rallies</h2>
 				</div>
 				<div>
 					<main>
@@ -117,7 +115,6 @@ class MyMap extends Component {
 	render() {
 
 		return <div id="map" style={{ height: 500 }}>
-
 		</div>;
 	}
 }
