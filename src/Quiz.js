@@ -13,7 +13,7 @@ class Quiz extends React.Component {
         this.state = {
             quiz: quizJSON,
             user_answers: [],
-            step: 0
+            step: null
         }
         this.setState = this.setState.bind(this);
         this.nextStep = this.nextStep.bind(this);
@@ -21,6 +21,10 @@ class Quiz extends React.Component {
         this.computePercent = this.computePercent.bind(this);
         this.renderResult = this.renderResult.bind(this);
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentWillMount() {
+        this.setState({ step: 0 });
     }
 
     nextStep() {
@@ -49,8 +53,8 @@ class Quiz extends React.Component {
         Object.keys(this.state.quiz.questions).map((value, index) => {
             total++;
             if (this.isAnswerRight(index)) {
-                console.log("increment score");
                 score++;
+
             }
         });
         var finalPercent = (score / total * 100);
