@@ -37,7 +37,7 @@ class Bio extends Component {
     this.state = {
       showMore:false,
       bio:"Kanye Omari West was born in Atlanta, Georgia, on June 8, 1977. He left college to pursue a musical career, producing tracks for Jay-Z while polishing his demo. He released The College Dropout in 2004. It sold 2.6 million copies and won Best Rap Album. His follow-up releases have been",
-      link:"Show more",
+      link:"Show More",
       quote:"should be a quote"
     };
     this.fetchData();
@@ -56,7 +56,7 @@ class Bio extends Component {
   handleClick(){   
     if(this.state.showMore === false) {
       this.setState({
-        bio: "Kanye Omari West was born in Atlanta, Georgia, on June 8, 1977. He left college to pursue a musical career, producing tracks for Jay-Z while polishing his demo. He released The College Dropout in 2004. It sold 2.6 million copies and won Best Rap Album. His follow-up releases have been equally successful and West has become a celebrity famous for his outrageous and entertaining antics and marriage to reality television star Kim Kardashian.",
+        bio: "Kanye Omari West was born in Atlanta, Georgia, on June 8, 1977. He left college to pursue a musical career, producing tracks for Jay-Z while polishing his demo. He released The College Dropout in 2004. It sold 2.6 million copies and won Best Rap Album. His follow-up releases have been equally successful and West has become a celebrity famous for his outrageous and entertaining antics and marriage to reality television star Kim Kardashian. At the 2015 VMA Awards, he announced that he would be running for POTUS in the 2020 election. He would love you to show your support in any way possible as he embarks on this journey to being the most powerful man in the free world.",
         showMore:true,
         link:"Show Less"
       });
@@ -76,22 +76,24 @@ class Bio extends Component {
   }
 
     render(){
-        return(
-            <div>
-                <h1>Kanye Omari West</h1>
-                <p id="quote">"{this.state.quote}" --Kanye</p>
-                <button onClick={this.handleQuote}> New Quote </button>
-              
-                <script type="text" src="https://yepi.io/quote.js"/> 
-                <div id="followButton">
-              {/*    <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x&size=basic&theme=light" width="300" height="56" scrolling="no" frameBorder="0" allowTransparency="true"></iframe> */}
-                </div>
-                <img  id="profPic" src="https://cmgajcmusic.files.wordpress.com/2016/06/kanye-west2.jpg"alt="kanye"/>
-                <h4>Biography </h4>
-                <p> {this.state.bio}</p>
-                  <p onClick={this.handleClick} id="show"> {this.state.link} </p>  
-            </div>
-        )
+      return(
+          <div>
+              <h1>Kanye Omari West</h1>
+              <div className="quote-block">
+                <p id="quote">"{this.state.quote}" -- Kanye</p>
+                <button onClick={this.handleQuote}> More Quotes </button>
+              </div>
+            
+              <script type="text" src="https://yepi.io/quote.js"/> 
+              <div id="followButton">
+            {/*    <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x&size=basic&theme=light" width="300" height="56" scrolling="no" frameBorder="0" allowTransparency="true"></iframe> */}
+              </div>
+              <img id="profPic" src="https://cmgajcmusic.files.wordpress.com/2016/06/kanye-west2.jpg"alt="kanye"/>
+              <h4>Biography</h4>
+              <p className="bio">{this.state.bio}</p>
+              <p onClick={this.handleClick} id="show"> {this.state.link} </p>  
+          </div>
+      )
     };
 }
 

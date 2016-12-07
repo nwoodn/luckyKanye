@@ -46,10 +46,14 @@ class Home extends React.Component {
                                     <i className="fa fa-star gray" aria-hidden="true"></i><i className="fa fa-star gray" aria-hidden="true"></i><i className="fa fa-star gray" aria-hidden="true"></i>
                                 </div>
                                 <div className="video-list">
-                                    <iframe className="video" src="https://www.youtube.com/embed/u9x92nwGf_M" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
-                                    <label className="video-label">Kanye West's Presidential Campaign Announcement at 2015 VMA's</label>
-                                    <iframe className="video" src="https://www.youtube.com/embed/mhFW2dK_sxk" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
-                                    <label className="video-label">Obama's Advice to Kanye West For His 2020 Presidential Campaign</label>
+                                    <div className="video-card">
+                                        <iframe className="video" src="https://www.youtube.com/embed/u9x92nwGf_M" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+                                        <label className="video-label">Kanye West's Presidential Campaign Announcement at 2015 VMA's</label>
+                                    </div>
+                                    <div className="video-card">
+                                        <iframe className="video" src="https://www.youtube.com/embed/mhFW2dK_sxk" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+                                        <label className="video-label">Obama's Advice to Kanye West For His 2020 Presidential Campaign</label>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>
@@ -63,12 +67,12 @@ class Home extends React.Component {
 class NewsList extends React.Component {
 
     render() {
-        var newsItemArray = (this.props.articles).map(function (newsObj) {
+        var newsItemArray = (this.props.articles.slice(0, 4)).map(function (newsObj) {
             return <NewsItem article={newsObj} />
         });
 
         return (
-            <div>
+            <div className="news-list">
                 {newsItemArray}
             </div>
         );
@@ -81,13 +85,16 @@ class NewsItem extends React.Component {
 
     render() {
         var newsObj = this.props.article;
-        var newsHeadline = this.props.article.headline.print_headline;
+        var newsHeadline = (this.props.article.headline.print_headline || this.props.article.headline.main);
         var snippet = this.props.article.snippet;
-        console.log(newsHeadline);
+        snippet = snippet.substring(0, snippet.length - 3);
+        var link = this.props.article.web_url;
         return (
-            <div>
-                <h4>{newsHeadline}</h4>
-                <p>{snippet}</p>
+            <div className="news-card">
+                <a href={link}>
+                    <h4 className="article-headline">{newsHeadline}</h4>
+                    <p className="article-content">"{snippet}"</p>
+                </a>
             </div>
         );
     }

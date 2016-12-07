@@ -47,6 +47,24 @@ class Events extends React.Component {
 
 	//				<SearchEvents totalResults={this.state.totalResults} searchCallBack={this.main}/>
 
+  // fetchData(SAMPLE_Events) {
+  //   var thisComponent = this;
+
+  // }
+  render() {
+    return (
+      <div className="Events">
+        <div className="Event-header">
+          <h2>"Campaign" Events</h2>
+        </div>
+        <main>
+          <EventTable events={this.state.events} />
+        </main>
+      </div>
+    );
+  }
+
+
 
 	render() {
 		// 	var Livemap = React.createClass({
