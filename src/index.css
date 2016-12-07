@@ -46,4 +46,9 @@ FormControl {
 
 MapView {
   height:180px;
+ 
+}
+
+#map{
+   margin: 30px;
 }
