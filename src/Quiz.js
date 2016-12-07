@@ -179,5 +179,5 @@ class PoliticalStances extends React.Component {
         )
     }
 }
-
+export { PoliticalStances }; 
 export default Quiz;

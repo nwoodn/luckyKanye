@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Quiz from './Quiz'; 
+import Quiz, {PoliticalStances} from './Quiz'; 
 import Home from "./Home";
 import Events from './Events';
 import About from './About';
