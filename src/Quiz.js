@@ -1,4 +1,5 @@
 import React from 'react';
+import { ProgressBar } from 'react-bootstrap';
 import quizJSON from './quiz.json';
 import './Quiz.css';
 
@@ -54,7 +55,7 @@ class Quiz extends React.Component {
         });
         var finalPercent = (score / total * 100);
         if (finalPercent >= 60) {
-            return <div className="score">You agree with {finalPercent}% of Kanye's opinions<br/>You would enjoy having Kanye as President!</div>
+            return <div className="score">You agree with {finalPercent}% of Kanye's opinions<br />You would enjoy having Kanye as President!</div>
         } else {
             return <div className="score">You agree with {finalPercent}% of Kanye's opinions</div>;
 
@@ -66,27 +67,32 @@ class Quiz extends React.Component {
     }
 
     handleClick() {
-        this.setState({ step: 0 }); 
+        this.setState({ step: 0 });
     }
 
 
     render() {
-        if (this.state.step === null) { 
+        if (this.state.step === null) {
             return <div>
-                       <h2>{this.state.quiz.title}</h2>
-                       <h3>Take this quiz to find out!</h3>
-                       <button className="btn btn-primary" id="start" type="button" onClick={this.handleClick}>Start</button>
-                   </div>
+                <h2>{this.state.quiz.title}</h2>
+                <h3>Take this quiz to find out!</h3>
+                <button className="btn btn-primary" id="start" type="button" onClick={this.handleClick}>Start</button>
+            </div>
         }
+        var now = this.state.step * 10;
         return (
             <div className="quiz">
-                {/*<h2>{this.state.quiz.title}</h2>*/}
                 {(this.state.step < (this.state.quiz.questions.length)
-                    ? (<Question
-                        id={this.state.step}
-                        data={this.state.quiz.questions[this.state.step]}
-                        validateAnswers={this.nextStep}
-                        setAnswer={this.setAnswer} />)
+                    ? (
+                        <div>
+                            <ProgressBar active now={now} label={`${now}%`} />
+                            <Question
+                                id={this.state.step}
+                                data={this.state.quiz.questions[this.state.step]}
+                                validateAnswers={this.nextStep}
+                                setAnswer={this.setAnswer} />
+                        </div>
+                    )
                     : (
                         <div>
                             <div>{this.computePercent()}</div>

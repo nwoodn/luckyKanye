@@ -16,7 +16,7 @@ h1, h2 {
     font-family: 'Bungee', cursive;
     display: inline;
     vertical-align: middle;
-    font-size: 240%;
+    font-size: 170%;
 }
 
 iframe {
@@ -26,6 +26,12 @@ iframe {
 
 ul.nav.navbar-nav {
      max-width: none;
+}
+
+@media screen and (min-width: 500px) {
+    h1 {
+        font-size: 240%;
+    }
 }
 
 @media screen and (min-width: 768px) {
