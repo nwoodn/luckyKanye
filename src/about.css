@@ -56,10 +56,6 @@ p {
 
 
 @media screen and (min-width:768px){
-    Form {
-        
-    }
-
     .iFrame{
         transform: translateX(-250px);
     }
