@@ -22,7 +22,7 @@ class Events extends React.Component {
 		return (
 			<div className="Events">
 				<div className="Event-header">
-					<h2>Events</h2>
+					<h2 className="block-font">Events</h2>
 					<MyMap marker={this.state.events} />
 				</div>
 				<main>
@@ -32,6 +32,7 @@ class Events extends React.Component {
 		);
 	}
 }
+
 
 class EventTable extends React.Component {
 	render() {

@@ -5,6 +5,7 @@ import Quiz from './Quiz';
 import Home from "./Home";
 import Events from './Events';
 import About from './About';
+import PoliticalStances from './PoliticalStances';
 import {Router, Route, hashHistory, IndexRoute} from 'react-router'; 
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -15,6 +16,7 @@ ReactDOM.render(
   <Router history={hashHistory}>
      <Route path="/" component={App}>
       <IndexRoute component={Home} />
+      <Route path="positions" component={PoliticalStances} />
       <Route path="quiz" component={Quiz} />
       <Route path="events" component={Events} />
       <Route path="about" component={About} />
