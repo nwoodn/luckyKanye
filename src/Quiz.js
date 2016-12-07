@@ -3,6 +3,8 @@ import { ProgressBar } from 'react-bootstrap';
 import quizJSON from './quiz.json';
 import './Quiz.css';
 import politicalViews from './PoliticalStances.json'; 
+import kanyePic from './kanye-lmao.jpg'; 
+import thumbsUp from './thumbs-up.jpg'; 
 
 class Quiz extends React.Component {
 
@@ -57,9 +59,15 @@ class Quiz extends React.Component {
         });
         var finalPercent = (score / total * 100);
         if (finalPercent >= 60) {
-            return <div className="score">You agree with {finalPercent}% of Kanye's opinions<br />You would enjoy having Kanye as President!</div>
+            return <div>
+                       <div className="score">You agree with {finalPercent}% of Kanye's opinions<br />You would enjoy having Kanye as President!</div>
+                       <img src={thumbsUp} alt="Happy Kanye" className="kanye-happy" />
+                   </div>;
         } else {
-            return <div className="score">You agree with {finalPercent}% of Kanye's opinions</div>;
+            return <div>
+                       <div className="score">You agree with {finalPercent}% of Kanye's opinions</div>
+                       <img src={kanyePic} alt="Kanye West" className="kanye-lmao" />
+                   </div>;
 
         }
     }
