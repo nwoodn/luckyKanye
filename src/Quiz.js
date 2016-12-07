@@ -38,7 +38,7 @@ class Quiz extends React.Component {
         var result = true;
         Object.keys(this.state.quiz.questions[index].answers).map((value) => {
             var answer = this.state.quiz.questions[index].answers[value]
-            if (!this.state.user_answers[index] || (answer.is_right != (this.state.user_answers[index][value] || false))) {
+            if (!this.state.user_answers[index] || (answer.is_right !== (this.state.user_answers[index][value] || false))) {
                 result = false;
             }
         });
@@ -52,7 +52,7 @@ class Quiz extends React.Component {
             total++;
             if (this.isAnswerRight(index)) {
                 console.log("increment score");
-                score = score + 1;
+                score++;
             }
         });
         var finalPercent = (score / total * 100);
@@ -163,18 +163,6 @@ class Question extends React.Component {
 }
 
 class PoliticalStances extends React.Component {
-
-    constructor(props) {
-        super(props); 
-        this.state = {
-            stances: {}
-        };
-    }
-
-    componentDidMount() {
-        this.setState({ stances: politicalViews });
-    }
-
     render() {
         return (
             <div className="political-stances">

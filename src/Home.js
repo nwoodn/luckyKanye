@@ -46,10 +46,14 @@ class Home extends React.Component {
                                     <i className="fa fa-star gray" aria-hidden="true"></i><i className="fa fa-star gray" aria-hidden="true"></i><i className="fa fa-star gray" aria-hidden="true"></i>
                                 </div>
                                 <div className="video-list">
-                                    <iframe className="video" src="https://www.youtube.com/embed/u9x92nwGf_M" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
-                                    <label className="video-label">Kanye West's Presidential Campaign Announcement at 2015 VMA's</label>
-                                    <iframe className="video" src="https://www.youtube.com/embed/mhFW2dK_sxk" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
-                                    <label className="video-label">Obama's Advice to Kanye West For His 2020 Presidential Campaign</label>
+                                    <div className="video-card">
+                                        <iframe className="video" src="https://www.youtube.com/embed/u9x92nwGf_M" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+                                        <label className="video-label">Kanye West's Presidential Campaign Announcement at 2015 VMA's</label>
+                                    </div>
+                                    <div className="video-card">
+                                        <iframe className="video" src="https://www.youtube.com/embed/mhFW2dK_sxk" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+                                        <label className="video-label">Obama's Advice to Kanye West For His 2020 Presidential Campaign</label>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>
