@@ -56,7 +56,7 @@ p {
 
 
 @media screen and (min-width:768px){
-    Form {
+    #search {
         margin-right: 500px;
     }
 
@@ -64,7 +64,7 @@ p {
         transform: translateX(-250px);
     }
 
-    .form {
+    .search {
         margin-right: 500px;
         float: left;
         width: 300px;
@@ -181,7 +181,7 @@ p {
         margin-right: 150px;
         transform:translatey(-600px);
     }
-    Form {
+    .search {
         transform:translateX(1200px) translateY(-400px);
     }
 
